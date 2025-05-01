@@ -28,9 +28,10 @@ body {
     color: #ffffff;
 }
 
+/* Update global button styles to remove border color */
 button {
     background-color: transparent;
-    border: 2px solid white;
+    border: 2px solid; /* Default to transparent */
     border-radius: 5px;
     padding: 10px 20px;
     color: white;
@@ -40,4 +41,28 @@ button {
 
 button:hover {
     opacity: 0.8;
+}
+
+/* Light Theme Button */
+.light-button {
+    background-color: #f0f0f0;
+    border: 2px solid #333333;
+    color: #333333;
+    border-color: #333333;
+}
+
+/* Dark Theme Button */
+.dark-button {
+    background-color: #333333;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+/* Colorful Theme Button */
+.colorful-button {
+    background-color: #ffcc00;
+    border: 2px solid #009290;
+    color: #009290;
+    border-color: #009290;
 }
