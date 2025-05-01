@@ -1,19 +1,12 @@
 body {
     transition: background-color 0.3s, color 0.3s;
+    font-family: 'Questrial', sans-serif;
 }
 
 /* Light Theme */
 .theme-light {
     background-color: #ffffff;
-    color: #333333; /* Dark grey */
-}
-
-.theme-light button {
-    color: inherit; /* Use the text color defined by the theme */
-}
-
-.theme-light * {
-    color: #333333 !important; /* Ensure dark grey text for all elements */
+    color: #333333;
 }
 
 /* Dark Theme */
@@ -28,21 +21,33 @@ body {
     color: #ffffff;
 }
 
-/* Mountain Theme */
-.theme-mountain {
-    background-image: url('https://example.com/mountain.jpg');
-    background-size: cover;
-    background-position: center;
-    color: #ffffff;
+/* Light theme style */
+.light-theme {
+    background-color: white;
+    color: grey;
+    border: 1px solid white;
 }
 
-/* Update global button styles to remove border color */
+/* Dark theme style */
+.dark-theme {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+
+/* Colours theme style */
+.colours-theme {
+    background-color: #485578;
+    color: white;
+    border: 1px solid #009290;
+}
+
+/* Fixed button styles */
 button {
     background-color: transparent;
-    border: 2px solid; /* Default to transparent */
+    border: 2px solid;
     border-radius: 5px;
     padding: 10px 20px;
-    color: white;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -51,37 +56,44 @@ button:hover {
     opacity: 0.8;
 }
 
-/* Light Theme Button */
 .light-button {
-    background-color: #f0f0f0;
-    border: 2px solid #333333;
+    background-color: white;
     color: #333333;
     border-color: #333333;
 }
 
-/* Dark Theme Button */
 .dark-button {
-    background-color: #333333;
-    border: 2px solid #ffffff;
-    color: #ffffff;
-    border-color: #ffffff;
+    background-color: black;
+    color: white;
+    border-color: white;
 }
 
-/* Colorful Theme Button */
 .colorful-button {
-    background-color: #ffcc00;
-    border: 2px solid #009290;
-    color: #009290;
-    border-color: #009290;
+    background-color: #333b50;
+    color: white;
+    border-color: white;
 }
 
-/* Mountain Theme Button */
-.mountain-button {
-    background-color: #4a7c59;
-    border: 2px solid #ffffff;
-    color: #ffffff;
+/* Button styles */
+button.light {
+    background-color: white;
+    color: grey;
+    border: 2px solid #333333; /* Updated to match intended design */
 }
 
+button.dark {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+
+button.colour {
+    background-color: #333b50;
+    color: white;
+    border: 1px solid #009290;
+}
+
+/* Fixed position and layout for buttons */
 nav {
     position: fixed;
     top: 50%;
@@ -90,4 +102,45 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+/* Ensure button styles are applied with higher specificity */
+nav .light-button {
+    background-color: white;
+    color: #333333;
+    border: 2px solid #333333;
+}
+
+nav .dark-button {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+}
+
+nav .colorful-button {
+    background-color: #333b50;
+    color: white;
+    border: 2px solid white;
+}
+
+/* Loading screen styles */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  z-index: 1000;
+}
+
+#loading-screen.hidden {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
 }
