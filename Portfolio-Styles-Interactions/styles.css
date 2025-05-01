@@ -1,0 +1,29 @@
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-light {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.theme-dark {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.theme-colorful {
+    background-color: #ffcc00;
+    color: #003366;
+}
+
+button {
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
