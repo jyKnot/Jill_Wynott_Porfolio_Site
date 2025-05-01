@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleButtons.forEach(button => {
         button.addEventListener('click', () => {
             const theme = button.getAttribute('data-theme');
-            body.className = ''; // Clear existing classes
+            body.classList.remove('theme-light', 'theme-dark', 'theme-colorful', 'theme-mountain'); // Remove only theme classes
             body.classList.add(theme); // Add the selected theme class
         });
     });
