@@ -27,3 +27,21 @@ button {
 button:hover {
     opacity: 0.8;
 }
+
+/* Light theme button styles */
+.theme-light button {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Dark theme button styles */
+.theme-dark button {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Colorful theme button styles */
+.theme-colorful button {
+    background-color: #333b50;
+    color: #ffffff;
+}
