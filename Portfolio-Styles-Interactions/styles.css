@@ -147,7 +147,6 @@
     max-width: 100%;
     display: block;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     object-fit: cover; /* optional: helps with consistent crop */
     transition: opacity 0.5s ease;
   }
@@ -203,7 +202,7 @@
   }
   
   /* -------------------------
-     Theme Classes (Body Level)
+     Theme Classes and styles
   -------------------------- */
   
   .theme-light {
@@ -220,8 +219,18 @@
     background-color: #333b50;
     color: #ffffff;
   }
+
+  .theme-light .portfolio-item {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Soft grey for light theme */
+  }
+
+  .theme-dark .portfolio-item {
+    box-shadow: 0 1px 6px #ffffff; /* Light glow for dark theme */
+  }
   
- 
+  .theme-colorful .portfolio-item {
+    box-shadow: 0 1px 6px #009290; /* Teal tone for colorful theme */
+  }
     /* -------------------------
 Intro Section  layout
   -------------------------- */
@@ -252,6 +261,7 @@ Intro Section  layout
   .intro-text p {
     font-size: 1.1rem;
     line-height: 1.5;
+    font-size: 2rem;
   }
 
     
@@ -321,15 +331,81 @@ Intro Section  layout
   
   /* Optional: Responsive text */
   .story-container h2 {
-    font-size: 2rem;
     margin-bottom: 1rem;
   }
   
   .story-container p {
-    font-size: 1.1rem;
+    font-size: 2rem;
     line-height: 1.6;
     margin-bottom: 1rem;
   }
 
+  
+  /* -------------------------
+   Portfolio Section Layout
+-------------------------- */
+
+#portfolio-section {
+    padding: 4rem 2rem;
+    padding-top: 40rem; /* reminder to keep same spacing throughout page */
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .portfolio-container {
+    text-align: center;
+  }
+  
+  .portfolio-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .portfolio-container p {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+  }
+  
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  
+  .portfolio-item {
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05); /* default */
+    transition: transform 0.3s ease;
+    cursor: pointer; /* This line makes the cursor a pointer */
+  }
+  
+  .portfolio-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .portfolio-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    display: block;
+  }
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .portfolio-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .portfolio-item p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  
   
   
