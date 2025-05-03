@@ -9,7 +9,11 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-  </head>
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+   
   <body>
     <!-- Portfolio Popup -->
     <div class="portfolio-popup hidden" id="portfolioPopup">
@@ -19,6 +23,13 @@
         <h3 id="popupTitle">Project Title</h3>
         <p id="popupDescription">More detailed description here.</p>
       </div>
+    </div>
+
+    <div class="social-fixed">
+      <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="mailto:you@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/jillwynott/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.behance.net/yourusername" target="_blank" aria-label="Behance"><i class="fab fa-behance"></i></a>
     </div>
 
     <!-- Theme Nav -->
@@ -69,7 +80,9 @@
         <div class="story-container slide-in-right">
           <p>
             I am a curious, creative, and values-driven lifelong learner
-            passionate about tech and design.
+            passionate about tech and design. <br><br> With a background in graphic design, web management, and
+            communications, I love turning ideas into innovative solutions that
+            bring people together and create meaningful impact.
           </p>
         </div>
       </section>
@@ -77,12 +90,11 @@
       <!-- Portfolio Section -->
       <section id="portfolio-section">
         <div class="portfolio-container slide-in-right">
-          <p class="portfolio-intro">
-            With a background in graphic design, web management, and
-            communications, I love turning ideas into innovative solutions that
-            bring people together and create meaningful impact.
-          </p>
+         <h2>See some of my latest work</h2>
           <div class="portfolio-grid">
+
+
+
             <div
               class="portfolio-item"
               data-title="Corporate Plan"
@@ -96,6 +108,9 @@
               <h3>Corporate Plan</h3>
               <p>Brief description of what this project is about.</p>
             </div>
+
+
+
             <div
               class="portfolio-item"
               data-title="Strategic Plan"
@@ -109,6 +124,9 @@
               <h3>Strategic Plan</h3>
               <p>Another description highlighting what you did or learned.</p>
             </div>
+
+
+
             <div
               class="portfolio-item"
               data-title="Whistler Sailing"
@@ -122,6 +140,54 @@
               <h3>Whistler Sailing</h3>
               <p>Another description highlighting what you did or learned.</p>
             </div>
+
+
+            <div
+            class="portfolio-item"
+            data-title="Whistler Sailing"
+            data-image="./Assignment_2_Portfolio_Interactivity_Images/WSA_Full_ Mockup_web.jpg"
+            data-description="Rebranded Whistler Sailing, created promotional assets and redesigned the website for better mobile experience."
+          >
+            <img
+              src="./Assignment_2_Portfolio_Interactivity_Images/WSA_Full_ Mockup_web.jpg"
+              alt="Whistler Sailing"
+            />
+            <h3>Whistler Sailing</h3>
+            <p>Another description highlighting what you did or learned.</p>
+          </div>
+
+
+          <div
+          class="portfolio-item"
+          data-title="Whistler Sailing"
+          data-image="./Assignment_2_Portfolio_Interactivity_Images/WSA_Full_ Mockup_web.jpg"
+          data-description="Rebranded Whistler Sailing, created promotional assets and redesigned the website for better mobile experience."
+        >
+          <img
+            src="./Assignment_2_Portfolio_Interactivity_Images/WSA_Full_ Mockup_web.jpg"
+            alt="Whistler Sailing"
+          />
+          <h3>Whistler Sailing</h3>
+          <p>Another description highlighting what you did or learned.</p>
+        </div>
+
+
+        <div
+        class="portfolio-item"
+        data-title="Whistler Sailing"
+        data-image="./Assignment_2_Portfolio_Interactivity_Images/WSA_Full_ Mockup_web.jpg"
+        data-description="Rebranded Whistler Sailing, created promotional assets and redesigned the website for better mobile experience."
+      >
+        <img
+          src="./Assignment_2_Portfolio_Interactivity_Images/WSA_Full_ Mockup_web.jpg"
+          alt="Whistler Sailing"
+        />
+        <h3>Whistler Sailing</h3>
+        <p>Another description highlighting what you did or learned.</p>
+      </div>
+
+      <!-- Add more projects here -->
+
           </div>
         </div>
       </section>
@@ -160,4 +226,8 @@
 
     <script src="script.js"></script>
   </body>
+  <div class="footer">
+    <footer>
+    <p>© 2025 by Jill Wynott. All rights reserved.</p>
+  </footer>
 </html>
