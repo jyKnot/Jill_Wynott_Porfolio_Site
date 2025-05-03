@@ -540,5 +540,89 @@ Intro Section  layout
   }
   
   
+  /* -------------------------
+   Contact Section - Themed
+-------------------------- */
+
+#contact-section {
+    padding: 6rem 2rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .theme-light #contact-section {
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .theme-dark #contact-section {
+    background-color: #111;
+    color: #f1f1f1;
+  }
+  
+  .theme-colorful #contact-section {
+    background-color: #2a2f3a;
+    color: #ffffff;
+  }
+  
+  .contact-container {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .contact-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-container p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* -------------------------
+     Form Styling (Universal)
+  -------------------------- */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: left;
+  }
+  
+  form label {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  /* Theme-Inheriting Inputs */
+  form input,
+  form textarea {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    width: 100%;
+    background-color: transparent;
+    color: inherit;
+    border: 1px solid currentColor;
+  }
+  
+  /* Themed Submit Button */
+  form button {
+    background-color: #009290;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  form button:hover {
+    background-color: #007e7c;
+  }
   
   
