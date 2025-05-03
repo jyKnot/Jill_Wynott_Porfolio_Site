@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     // Grab all the buttons with class "theme-toggle"
     const themeButtons = document.querySelectorAll('.theme-toggle');
+    const introImage = document.querySelector('#intro-section .intro-image img');
   
     // Add a click listener to each theme button
     themeButtons.forEach(button => {
@@ -20,6 +21,15 @@ document.addEventListener('DOMContentLoaded', () => {
   
         // Add the selected theme class to <body>
         document.body.classList.add(themeClass);
+
+        //  Update image based on theme
+        if (themeClass === 'theme-light') {
+            introImage.src = './Assignment_2_Portfolio_Interactivity_Images/headshot-image-light.png';
+          } else if (themeClass === 'theme-dark') {
+            introImage.src = './Assignment_2_Portfolio_Interactivity_Images/headshot-image-dark.png';
+          } else if (themeClass === 'theme-colorful') {
+            introImage.src = './Assignment_2_Portfolio_Interactivity_Images/headshot-image-colour.png';
+          }
       });
     });
   
