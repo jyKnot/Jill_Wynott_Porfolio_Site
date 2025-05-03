@@ -71,6 +71,74 @@
   }
   
   
+  /* -------------------------
+   Dev Theme Styling
+-------------------------- */
+
+.theme-dev {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .theme-dev #main-header-nav a {
+    color: #00d0ff;
+  }
+  
+  .theme-dev .portfolio-item {
+    background-color: #2d2d2d;
+    color: #9cdcfe;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+  }
+  
+  .theme-dev .popup-content {
+    background-color: #252526;
+    color: #d4d4d4;
+    border: 1px solid #3c3c3c;
+  }
+  
+  .theme-dev .popup-close {
+    color: #f44747;
+  }
+  
+  .theme-dev .contact-container {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+  }
+  
+  .theme-dev form input,
+  .theme-dev form textarea {
+    background-color: #2d2d2d;
+    color: #dcdcdc;
+    border: 1px solid #3c3c3c;
+  }
+  
+  .theme-dev form button {
+    background-color: #007acc;
+    color: #ffffff;
+  }
+  
+  .theme-dev form button:hover {
+    background-color: #005f99;
+  }
+  
+  /* Optional Code Snippet Style */
+  .code-snippet {
+    display: none;
+    background-color: #1e1e1e;
+    color: #dcdcdc;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    font-family: monospace;
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+    border: 1px solid #333;
+  }
+  
+  .theme-dev .code-snippet {
+    display: block;
+  }
   
   
   

@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     themeButtons.forEach(button => {
       button.addEventListener('click', () => {
         // Remove all possible theme classes from the <body>
-        document.body.classList.remove('theme-light', 'theme-dark', 'theme-colorful');
+        document.body.classList.remove('theme-light', 'theme-dark', 'theme-colorful', 'theme-dev');
   
         // Get the theme from the button's data-theme attribute
         const themeClass = button.getAttribute('data-theme');
