@@ -1,3 +1,22 @@
+ 
+ /* -------------------------
+   Reset & Base
+-------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Questrial', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+  }
+ 
  /* -------------------------
      Responsive Adjustments
   -------------------------- */
@@ -16,26 +35,35 @@
     /* Do NOT change theme-nav position on mobile */
   }
 
+   /* Responsive Stack on Mobile */
+
+   @media (max-width: 768px) {
+    .intro-container {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  
+    .intro-text {
+      margin-bottom: 1.5rem;
+    }
+  }
 
 
+  
+  /* -------------------------
+     Scrollytelling
+  -------------------------- */
 
-
-/* -------------------------
-   Reset & Base
--------------------------- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    will-change: opacity, transform;
   }
   
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  body {
-    font-family: 'Questrial', sans-serif;
-    transition: background-color 0.3s, color 0.3s;
+  .reveal-on-scroll.revealed {
+    opacity: 1;
+    transform: translateY(0);
   }
   
   /* -------------------------
@@ -172,8 +200,9 @@ Intro Section - heading ser
   }
   
   /* Text Styling */
+
   .intro-text h1 {
-    font-size: 2rem;
+    font-size: 5rem;
     margin-bottom: 1rem;
   }
   
@@ -183,6 +212,7 @@ Intro Section - heading ser
   }
   
   /* Image Styling */
+
   .intro-image img {
     width: 100%;
     height: auto;
@@ -190,14 +220,4 @@ Intro Section - heading ser
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
   
-  /* Responsive Stack on Mobile */
-  @media (max-width: 768px) {
-    .intro-container {
-      grid-template-columns: 1fr;
-      text-align: center;
-    }
-  
-    .intro-text {
-      margin-bottom: 1.5rem;
-    }
-  }
+ 

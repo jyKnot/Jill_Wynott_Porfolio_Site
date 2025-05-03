@@ -1,30 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Theme switching
+
     const themeButtons = document.querySelectorAll('.theme-toggle');
-    const loadingScreen = document.getElementById('loading-screen');
-    const loadingText = document.getElementById('loading-text');
-
-    let progress = 0;
-    const interval = setInterval(() => {
-        progress += 5; // Increase progress slower
-        loadingText.textContent = `${progress}%`;
-
-        if (progress >= 100) { // Ensure it stops at 100
-            clearInterval(interval);
-            setTimeout(() => {
-                loadingScreen.style.transition = 'opacity 1s ease';
-                loadingScreen.style.opacity = '0';
-                setTimeout(() => {
-                    loadingScreen.classList.add('hidden');
-                }, 2000); // Wait for the fade-out transition to complete
-            }, 800); // Pause briefly at 100%
-        }
-    }, 35); // Slightly increase interval duration
-
+  
     themeButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            document.body.classList.remove('theme-light', 'theme-dark', 'theme-colorful');
-            const themeClass = button.getAttribute('data-theme');
-            document.body.classList.add(themeClass);
-        });
+      button.addEventListener('click', () => {
+        document.body.classList.remove('theme-light', 'theme-dark', 'theme-colorful');
+        const themeClass = button.getAttribute('data-theme');
+        document.body.classList.add(themeClass);
+      });
     });
-});
+  
+    // Reveal on scroll (scrollytelling)
+    
+    const revealElements = document.querySelectorAll('.reveal-on-scroll');
+  
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target); // Trigger once
+          }
+        });
+      },
+      {
+        threshold: 0.15 // Trigger when 15% of the element is visible
+      }
+    );
+  
+    revealElements.forEach(el => observer.observe(el));
+  });
+  
