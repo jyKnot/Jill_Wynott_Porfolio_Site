@@ -82,7 +82,7 @@
   }
   
   .theme-dev #main-header-nav a {
-    color: #00d0ff;
+    color: #00ff90;
   }
   
   .theme-dev .portfolio-item {
@@ -162,41 +162,27 @@
   
   /* Apply to all major content elements when in Dev mode */
 
-.theme-dev h1,
-.theme-dev h2,
-.theme-dev h3,
-.theme-dev h4,
-.theme-dev p {
-  background-color: #1e1e1e;
-  color: #dcdcdc;
-  font-family: 'Courier New', monospace;
-  padding: 1rem;
-  border-radius: 6px;
-  border: 1px solid #444;
-  margin-bottom: 1rem;
-  white-space: pre-wrap;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  position: relative;
-}
-
-/* Optional terminal-style prefix for paragraphs */
-
-.theme-dev p::before,
-.theme-dev h1::before,
-.theme-dev h2::before {
-  content: "<";
-  color: #00ff90;
-  font-weight: bold;
-  margin-right: 0.5rem;
-}
-
-.theme-dev p::after,
-.theme-dev h1::after,
-.theme-dev h2::after {
-  content: " />";
-  color: #00ff90;
-  font-weight: bold;
-}
+  .theme-dev h1::before,
+  .theme-dev h2::before,
+  .theme-dev h3::before,
+  .theme-dev h4::before,
+  .theme-dev p::before {
+    content: "<" attr(data-tag) "";
+    color: #00ff90;
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+  
+  .theme-dev h1::after,
+  .theme-dev h2::after,
+  .theme-dev h3::after,
+  .theme-dev h4::after,
+  .theme-dev p::after {
+    content: "" attr(data-tag) "/>";
+    color: #00ff90;
+    font-weight: bold;
+    margin-left: 0.5rem;
+  }
 
   
 
@@ -666,8 +652,9 @@ Intro Section  layout
   
   
   /* -------------------------
-   Contact Section - Themed
+   Contact Section 
 -------------------------- */
+
 
 #contact-section {
     padding: 6rem 2rem;
@@ -683,56 +670,67 @@ Intro Section  layout
     background-color: #111;
     color: #f1f1f1;
   }
+  
+  .theme-colorful #contact-section {
+    background-color: #2b3444;
+    color: #ffffff;
+  }
+  
+  .chat-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  /* Bubble base */
+  .chat-bubble {
+    border-radius: 20px;
+    padding: 1rem 1.5rem;
+    max-width: 100%;
+    position: relative;
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* System message (intro) */
+  .chat-bubble.system {
+    background-color: #f1f1f1;
+    align-self: flex-start;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  /* User input field bubble */
+  .chat-bubble.user-input {
+    background-color: lightgray
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-radius: 20px 20px 0 20px;
+  }
 
-  .chat-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-  }
   
-  .chat-bubble {
-    border-radius: 20px;
-    padding: 1rem 1.5rem;
-    max-width: 100%;
-    position: relative;
+  /* Inputs inside chat bubbles */
+
+  .chat-bubble.user-input input,
+  .chat-bubble.user-input textarea {
+    border: none;
+    padding: 0.8rem;
     font-size: 1rem;
-    line-height: 1.5;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .chat-bubble.system {
-    background-color: #eee;
-    align-self: flex-start;
-  }
-  
-  .chat-bubble.user-input {
-    background-color: #f4f4f4;
-    align-self: flex-end;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .chat-bubble.submit-bubble {
-    background: none;
-    align-self: flex-end;
-    padding: 0;
-  }
-  
-  .chat-form input,
-  .chat-form textarea {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 0.75rem;
-    font-size: 1rem;
+    border-radius: 10px;
     font-family: inherit;
     width: 100%;
     background-color: white;
-    color: inherit;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
   }
+  
+  /* Send button */
   
   .chat-form button {
     background-color: #009290;
@@ -743,93 +741,15 @@ Intro Section  layout
     border-radius: 25px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   }
   
   .chat-form button:hover {
     background-color: #007e7c;
   }
   
-  .contact-container {
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  .contact-container h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .contact-container p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-  }
-  
-  .chat-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-  }
-  
-  .chat-bubble {
-    border-radius: 20px;
-    padding: 1rem 1.5rem;
-    max-width: 100%;
-    position: relative;
-    font-size: 1rem;
-    line-height: 1.5;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .chat-bubble.system {
-    background-color: #eee;
-    align-self: flex-start;
-  }
-  
-  .chat-bubble.user-input {
-    background-color: #f4f4f4;
-    align-self: flex-end;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .chat-bubble.submit-bubble {
-    background: none;
-    align-self: flex-end;
-    padding: 0;
-  }
-  
-  .chat-form input,
-  .chat-form textarea {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 0.75rem;
-    font-size: 1rem;
-    font-family: inherit;
-    width: 100%;
-    background-color: white;
-    color: inherit;
-  }
-  
-  .chat-form button {
-    background-color: #009290;
-    color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .chat-form button:hover {
-    background-color: #007e7c;
-  }
-  
+  /* Themed overrides */
+
   .theme-dark .chat-bubble {
     background-color: #2a2a2a;
     color: #f1f1f1;
@@ -839,3 +759,4 @@ Intro Section  layout
     background-color: #3b4455;
     color: #ffffff;
   }
+  

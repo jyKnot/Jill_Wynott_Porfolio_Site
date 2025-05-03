@@ -2,23 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
-    <!-- Ensure proper scaling on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jill Wynott</title>
-
-    <!-- Load font from Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Questrial&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Link to css external stylesheet -->
     <link rel="stylesheet" href="styles.css" />
   </head>
-
   <body>
-    <!-- Popup for portfolio projects (initially hidden) -->
+    <!-- Portfolio Popup -->
     <div class="portfolio-popup hidden" id="portfolioPopup">
       <div class="popup-content">
         <span class="popup-close" id="popupClose">&times;</span>
@@ -28,9 +21,8 @@
       </div>
     </div>
 
-    <!-- Theme Navigation -->
+    <!-- Theme Nav -->
     <header>
-      <!-- Theme toggle buttons fixed on the screen -->
       <nav id="theme-nav">
         <button class="theme-toggle light" data-theme="theme-light">
           Light
@@ -42,27 +34,22 @@
         >
           Colour
         </button>
-        <button class="theme-toggle dev" data-theme="theme-dev">&lt;Dev/&gt;</button>
-
+        <button class="theme-toggle dev" data-theme="theme-dev">
+          &lt;Dev/&gt;
+        </button>
       </nav>
-
-      <!-- Main Header page navigation -->
 
       <nav id="main-header-nav">
         <ul>
           <li><a href="#portfolio-section">PORTFOLIO</a></li>
-          <li><a href="#Contact">CONTACT</a></li>
+          <li><a href="#contact-section">CONTACT</a></li>
         </ul>
       </nav>
     </header>
 
-    <!--  All main site content lives here -->
     <main>
       <!-- Intro Section -->
       <section id="intro-section" class="reveal-on-scroll">
-       
-          </code></pre>
-          </div>
         <div class="intro-container">
           <div class="intro-text slide-in-left">
             <h1>Hi, my name is Jill and I do stuff.</h1>
@@ -90,16 +77,12 @@
       <!-- Portfolio Section -->
       <section id="portfolio-section">
         <div class="portfolio-container slide-in-right">
-    
           <p class="portfolio-intro">
             With a background in graphic design, web management, and
             communications, I love turning ideas into innovative solutions that
             bring people together and create meaningful impact.
           </p>
-
           <div class="portfolio-grid">
-            <h2>test</h2>
-            <!-- Project 1 -->
             <div
               class="portfolio-item"
               data-title="Corporate Plan"
@@ -113,8 +96,6 @@
               <h3>Corporate Plan</h3>
               <p>Brief description of what this project is about.</p>
             </div>
-
-            <!-- Project 2 -->
             <div
               class="portfolio-item"
               data-title="Strategic Plan"
@@ -128,8 +109,6 @@
               <h3>Strategic Plan</h3>
               <p>Another description highlighting what you did or learned.</p>
             </div>
-
-            <!-- Project 3 -->
             <div
               class="portfolio-item"
               data-title="Whistler Sailing"
@@ -143,48 +122,41 @@
               <h3>Whistler Sailing</h3>
               <p>Another description highlighting what you did or learned.</p>
             </div>
-
-            <!-- Add another project here -->
           </div>
         </div>
       </section>
 
-      <!-- =======================
-     Contact Section
-======================== -->
-<section id="contact-section">
-  <div class="chat-container">
-    <div class="chat-bubble system">
-      👋 Hi there! Got a question or want to connect? Drop me a message!
-    </div>
-
-    <form id="contact-form" class="chat-form">
-      <div class="chat-bubble user-input">
-        <label for="name">Your name</label>
-        <input type="text" id="name" name="name" required />
-      </div>
-
-      <div class="chat-bubble user-input">
-        <label for="email">Your email</label>
-        <input type="email" id="email" name="email" required />
-      </div>
-
-      <div class="chat-bubble user-input">
-        <label for="message">Your message</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-      </div>
-
-      <div class="chat-bubble submit-bubble">
-        <button type="submit">💬 Send Message</button>
-      </div>
-    </form>
-  </div>
-</section>
-
-
+      <!-- Contact Section -->
+      <section id="contact-section">
+        <div class="chat-container">
+          <div class="chat-bubble system">
+            👋 Hi there! Got a question or want to connect? Drop me a message!
+          </div>
+          <form id="contact-form" class="chat-form">
+            <div class="chat-bubble user-input">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="chat-bubble user-input">
+              <label for="email">Your email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="chat-bubble user-input">
+              <label for="message">Your message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                required
+              ></textarea>
+            </div>
+            <div class="chat-bubble submit-bubble">
+              <button type="submit">💬 Send Message</button>
+            </div>
+          </form>
+        </div>
+      </section>
     </main>
-
-    <!-- 🔧 JavaScript for theme switching and popup functionality -->
 
     <script src="script.js"></script>
   </body>
