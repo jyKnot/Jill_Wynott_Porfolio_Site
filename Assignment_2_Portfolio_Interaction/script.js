@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 loadingScreen.style.opacity = '0';
                 setTimeout(() => {
                     loadingScreen.classList.add('hidden');
-                }, 1000); // Wait for the fade-out transition to complete
-            }, 500); // Pause briefly at 100%
+                }, 2000); // Wait for the fade-out transition to complete
+            }, 800); // Pause briefly at 100%
         }
     }, 35); // Slightly increase interval duration
 
