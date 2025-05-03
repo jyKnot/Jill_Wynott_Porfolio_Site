@@ -42,7 +42,7 @@
         >
           Colour
         </button>
-        <button class="theme-toggle dev" data-theme="theme-dev">Dev</button>
+        <button class="theme-toggle dev" data-theme="theme-dev">&lt;Dev/&gt;</button>
 
       </nav>
 
@@ -153,24 +153,34 @@
      Contact Section
 ======================== -->
 <section id="contact-section">
-  <div class="contact-container">
-    <h2>Get In Touch</h2>
-    <p>If you'd like to connect or collaborate, feel free to drop me a message below.</p>
+  <div class="chat-container">
+    <div class="chat-bubble system">
+      👋 Hi there! Got a question or want to connect? Drop me a message!
+    </div>
 
-    <form id="contact-form" action="#" method="post">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required />
+    <form id="contact-form" class="chat-form">
+      <div class="chat-bubble user-input">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required />
+      <div class="chat-bubble user-input">
+        <label for="email">Your email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="6" required></textarea>
+      <div class="chat-bubble user-input">
+        <label for="message">Your message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+      </div>
 
-      <button type="submit">Send Message</button>
+      <div class="chat-bubble submit-bubble">
+        <button type="submit">💬 Send Message</button>
+      </div>
     </form>
   </div>
 </section>
+
 
     </main>
 
