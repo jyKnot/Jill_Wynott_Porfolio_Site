@@ -364,6 +364,7 @@ Intro Section  layout
   .portfolio-container p {
     font-size: 1.1rem;
     margin-bottom: 3rem;
+    padding-top: 1.5rem;
   }
   
   .portfolio-grid {
@@ -377,7 +378,7 @@ Intro Section  layout
     border-radius: 12px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05); /* default */
     transition: transform 0.3s ease;
-    cursor: pointer; /* This line makes the cursor a pointer */
+    cursor: pointer; /*  This line makes the cursor a pointer */
   }
   
   .portfolio-item:hover {
@@ -391,7 +392,6 @@ Intro Section  layout
     border-radius: 8px;
     margin-bottom: 1rem;
     display: block;
-  }
     border-radius: 8px;
     margin-bottom: 1rem;
   }
@@ -406,6 +406,110 @@ Intro Section  layout
     line-height: 1.5;
   }
 
+  .portfolio-description {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+  }
+  
+  .portfolio-item.expanded .portfolio-description {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 1rem;
+  }
+  
+/* ==========================
+   Portfolio Popup (Expanded View)
+========================== */
+
+.portfolio-popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black backdrop */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+  
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* When popup is visible */
+  .portfolio-popup.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  /* Optionally hide completely (safeguard class) */
+  .portfolio-popup.hidden {
+    display: none;
+  }
+  
+  /* Inner content box */
+  .popup-content {
+    background-color: #fff;
+    color: #333;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    text-align: center;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  /* Responsive Image */
+  .popup-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  /* Title and description styling */
+  .popup-content h3 {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .popup-content p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #555;
+  }
+  
+  /* Close Button */
+  .popup-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  .popup-close:hover {
+    color: #333;
+  }
+  
+  /* Fade animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
   
   
   

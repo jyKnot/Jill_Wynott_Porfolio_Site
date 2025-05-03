@@ -59,3 +59,50 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach((el) => observer.observe(el));
   });
   
+
+//   PORTFOLIO EXPAND SECTION
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Target the popup container and its components
+    const popup = document.getElementById('portfolioPopup');
+    const popupImage = document.getElementById('popupImage');
+    const popupTitle = document.getElementById('popupTitle');
+    const popupDescription = document.getElementById('popupDescription');
+    const popupClose = document.getElementById('popupClose');
+  
+    // Grab all portfolio items that should trigger the popup
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+  
+    // Add click handler to each item
+    portfolioItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const image = item.getAttribute('data-image');
+        const title = item.getAttribute('data-title');
+        const description = item.getAttribute('data-description');
+  
+        // Set popup content
+        popupImage.src = image;
+        popupTitle.textContent = title;
+        popupDescription.textContent = description;
+  
+        // Show popup
+        popup.classList.add('visible');
+        popup.classList.remove('hidden');
+      });
+    });
+  
+    // Close popup when clicking "×" button
+    popupClose.addEventListener('click', () => {
+      popup.classList.remove('visible');
+      popup.classList.add('hidden');
+    });
+  
+    // Optional: Close popup when clicking outside the content box
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) {
+        popup.classList.remove('visible');
+        popup.classList.add('hidden');
+      }
+    });
+  });
+  

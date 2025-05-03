@@ -2,32 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- Responsiveness -->
+
+    <!-- Ensure proper scaling on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jill Wynott</title>
+
+    <!-- Load font from Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Questrial&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Link to css external stylesheet -->
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <!-- Dark, light, colour mode nav on the right -->
 
+  <body>
+    <!-- Popup for portfolio projects (initially hidden) -->
+    <div class="portfolio-popup hidden" id="portfolioPopup">
+      <div class="popup-content">
+        <span class="popup-close" id="popupClose">&times;</span>
+        <img src="" alt="Project Image" id="popupImage">
+        <h3 id="popupTitle">Project Title</h3>
+        <p id="popupDescription">More detailed description here.</p>
+      </div>
+    </div>
+
+    <!-- Theme Navigation -->
     <header>
+      <!-- Theme toggle buttons fixed on the screen -->
       <nav id="theme-nav">
-        <button class="theme-toggle light" data-theme="theme-light">
-          Light
-        </button>
+        <button class="theme-toggle light" data-theme="theme-light">Light</button>
         <button class="theme-toggle dark" data-theme="theme-dark">Dark</button>
-        <button
-          class="theme-toggle colourful colour"
-          data-theme="theme-colorful"
-        >
-          Colour
-        </button>
-        <!-- Header - main nav tabs -->
+        <button class="theme-toggle colourful colour" data-theme="theme-colorful">Colour</button>
       </nav>
+
+      <!-- Main Header page navigation -->
+
       <nav id="main-header-nav">
         <ul>
           <li><a href="#Professional">PROFESSIONAL</a></li>
@@ -36,9 +47,11 @@
         </ul>
       </nav>
     </header>
-    <main>
-      <!-- Main Intro Section -->
 
+    <!--  All main site content lives here -->
+    <main>
+
+      <!-- Intro Section -->
       <section id="intro-section" class="reveal-on-scroll">
         <div class="intro-container">
           <div class="intro-text slide-in-left">
@@ -54,53 +67,61 @@
         </div>
       </section>
 
-
       <!-- Story Section -->
-
       <section id="story-section">
         <div class="story-container slide-in-right">
           <p>
-            I am a curious, creative, and values-driven lifelong learner
-            passionate about tech and design. With a background in graphic
-            design, web management, and communications, I love turning ideas
-            into innovative solutions that bring people together and create
-            meaningful impact.
+            I am a curious, creative, and values-driven lifelong learner passionate about tech and design. With a background in graphic design, web management, and communications, I love turning ideas into innovative solutions that bring people together and create meaningful impact.
           </p>
         </div>
       </section>
 
-      <!-- Portfilio Section -->
-
+      <!-- Portfolio Section -->
       <section id="portfolio-section" class="reveal-on-scroll slide-in-left">
         <div class="portfolio-container">
           <p>Here are some projects I've worked on that combine design, development, and creativity.</p>
-      
+        
           <div class="portfolio-grid">
-            <div class="portfolio-item">
-              <img src="./Assignment_2_Portfolio_Interactivity_Images/Corporate_Plan_Mockup_Web.png" alt="Project 1" />
+            <!-- Project 1 -->
+            <div class="portfolio-item"
+                 data-title="Corporate Plan"
+                 data-image="./Assignment_2_Portfolio_Interactivity_Images/Corporate_Plan_Mockup_Web.png"
+                 data-description="This project involved designing a visually engaging and accessible corporate plan. I led layout, branding integration, and interactive PDF export for online publication.">
+              <img src="./Assignment_2_Portfolio_Interactivity_Images/Corporate_Plan_Mockup_Web.png" alt="Corporate Plan" />
               <h3>Corporate Plan</h3>
               <p>Brief description of what this project is about.</p>
             </div>
-      
-            <div class="portfolio-item">
-              <img src="./Assignment_2_Portfolio_Interactivity_Images/Strategic_Plan_Mockup_web.jpg" alt="Project 2" />
+
+            <!-- Project 2 -->
+            <div class="portfolio-item"
+                 data-title="Strategic Plan"
+                 data-image="./Assignment_2_Portfolio_Interactivity_Images/Strategic_Plan_Mockup_web.jpg"
+                 data-description="Designed a strategic planning doc with strong layout and accessibility for multi-stakeholder engagement.">
+              <img src="./Assignment_2_Portfolio_Interactivity_Images/Strategic_Plan_Mockup_web.jpg" alt="Strategic Plan" />
               <h3>Strategic Plan</h3>
               <p>Another description highlighting what you did or learned.</p>
             </div>
 
-            <div class="portfolio-item">
-              <img src="./Assignment_2_Portfolio_Interactivity_Images/WSA_Full_ Mockup_web.jpg" alt="Project 2" />
+            <!-- Project 3 -->
+            <div class="portfolio-item"
+                 data-title="Whistler Sailing"
+                 data-image="./Assignment_2_Portfolio_Interactivity_Images/WSA_Full_ Mockup_web.jpg"
+                 data-description="Rebranded Whistler Sailing, created promotional assets and redesigned the website for better mobile experience.">
+              <img src="./Assignment_2_Portfolio_Interactivity_Images/WSA_Full_ Mockup_web.jpg" alt="Whistler Sailing" />
               <h3>Whistler Sailing</h3>
               <p>Another description highlighting what you did or learned.</p>
             </div>
-      
-            <!-- Add more portfolio items as needed -->
 
+              <!-- Add another project here -->
+          
           </div>
         </div>
       </section>
-      
+
     </main>
+
+    <!-- 🔧 JavaScript for theme switching and popup functionality -->
+
     <script src="script.js"></script>
   </body>
 </html>
