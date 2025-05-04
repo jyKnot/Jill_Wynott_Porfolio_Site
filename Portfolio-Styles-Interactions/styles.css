@@ -602,10 +602,10 @@ Intro Section  layout
 .popup-content {
   background-color: #fff;
   color: #333;
-  padding: 2rem;
-  border-radius: 12px;
-  max-width: 600px;
-  width: 90%;
+  padding: 3rem;
+  border-radius: 16px;
+  max-width: 800px;
+  width: 95%;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
   position: relative;
   text-align: center;
