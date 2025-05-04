@@ -597,20 +597,65 @@ Intro Section  layout
   .portfolio-popup.hidden {
     display: none;
   }
-  
-  /* Inner content box */
-  .popup-content {
-    background-color: #fff;
-    color: #333;
-    padding: 2rem;
-    border-radius: 12px;
-    max-width: 600px;
-    width: 90%;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-    position: relative;
-    text-align: center;
-    animation: fadeIn 0.3s ease;
-  }
+
+ /* Base Popup Style (default light theme) */
+.popup-content {
+  background-color: #fff;
+  color: #333;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Light Theme */
+.theme-light .popup-content {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+/* Dark Theme */
+.theme-dark .popup-content {
+  background-color: #111111;
+  color: #f1f1f1;
+  border: 1px solid #333;
+  box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+}
+
+.theme-dark .popup-close {
+  color: #ccc;
+}
+
+/* Colorful Theme */
+
+.theme-colorful .popup-content {
+  background: linear-gradient(145deg, #2b3444, #3c4a60);
+  color: #ffffff;
+  border: 1px solid #444;
+  box-shadow: 0 0 20px rgba(0, 146, 144, 0.4);
+}
+
+.theme-colorful .popup-close {
+  color: #ffffff;
+}
+
+/* Dev Theme */
+.theme-dev .popup-content {
+  background-color: #252526;
+  color: #d4d4d4;
+  border: 1px solid #3c3c3c;
+  font-family: 'Courier New', monospace;
+  box-shadow: 0 0 20px rgba(0, 255, 144, 0.2);
+}
+
+.theme-dev .popup-close {
+  color: #f44747;
+}
+
   
   /* Responsive Image */
 
@@ -631,7 +676,6 @@ Intro Section  layout
   .popup-content p {
     font-size: 1.1rem;
     line-height: 1.5;
-    color: #555;
   }
   
   /* Close Button */
@@ -825,7 +869,6 @@ Intro Section  layout
 
 /* Terminal Wrapper */
 .terminal-box {
-    max-width: 700px;
     margin: 2rem auto;
     background-color: #1e1e1e;
     border-radius: 8px;
@@ -996,7 +1039,10 @@ Intro Section  layout
     color: #00ff90;
     font-family: 'Courier New', monospace;
     border-top: 1px solid #00ff90;
+    text-align: center;
   }
+
+
   
 
   /* Socials */

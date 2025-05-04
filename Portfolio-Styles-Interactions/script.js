@@ -30,25 +30,32 @@ document.addEventListener('DOMContentLoaded', () => {
     function wrapContentInTerminalBoxes() {
       const elements = document.querySelectorAll('h1, h2, h3, h4, p');
       elements.forEach(el => {
-        // Skip portfolio items or things already inside terminal boxes
+        // Don't touch anything inside portfolio-item (important!)
         if (el.closest('.portfolio-item') || el.closest('.inline-terminal')) return;
-  
+    
         const wrapper = document.createElement('div');
         wrapper.className = 'terminal-box inline-terminal';
-        wrapper.innerHTML = `
+        
+        const cloned = el.cloneNode(true); // Deep clone
+        cloned.setAttribute('contenteditable', 'true');
+    
+        const terminalHeader = `
           <div class="terminal-header">
             <span class="dot red"></span>
             <span class="dot yellow"></span>
             <span class="dot green"></span>
             <span class="terminal-title">~/content/${el.tagName.toLowerCase()}</span>
           </div>
-          <div class="terminal-content" contenteditable="true">${el.outerHTML}</div>
         `;
-  
-        terminalizedElements.set(wrapper, el.cloneNode(true)); // Save original
+    
+        wrapper.innerHTML = terminalHeader;
+        wrapper.appendChild(cloned);
+    
         el.replaceWith(wrapper);
+        terminalizedElements.set(wrapper, el.cloneNode(true));
       });
     }
+    
   
     function unwrapTerminalBoxes() {
       terminalizedElements.forEach((originalEl, wrapper) => {
@@ -69,13 +76,13 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.add(themeClass);
   
         if (themeClass === 'theme-light') {
-          introImage.src = './Assignment_2_Portfolio_Interactivity_Images/headshot-image-light.png';
+          introImage.src = './assets/headshot-image-light.png';
         } else if (themeClass === 'theme-dark') {
-          introImage.src = './Assignment_2_Portfolio_Interactivity_Images/headshot-image-dark.png';
+          introImage.src = './assets/headshot-image-dark.png';
         } else if (themeClass === 'theme-colorful') {
-          introImage.src = './Assignment_2_Portfolio_Interactivity_Images/headshot-image-colour.png';
+          introImage.src = './assets/headshot-image-colour.png';
         } else if (themeClass === 'theme-dev') {
-          introImage.src = './Assignment_2_Portfolio_Interactivity_Images/headshot-image-dev.png';
+          introImage.src = './assets/headshot-image-dev.png';
           updateDevTagLabels();
           wrapContentInTerminalBoxes();
         }
