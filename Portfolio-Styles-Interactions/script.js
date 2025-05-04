@@ -9,6 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const isDev = document.body.classList.contains('theme-dev');
       if (devTerminal) devTerminal.classList.toggle('hidden', !isDev);
     }
+
+    function toggleDinoGameVisibility() {
+      const gameBox = document.querySelector('.game-container');
+      if (gameBox) {
+        const isDev = document.body.classList.contains('theme-dev');
+        gameBox.style.display = isDev ? 'block' : 'none';
+      }
+    }
   
     function updateDevTagLabels() {
       const tagsToLabel = ['H1', 'H2', 'H3', 'H4', 'P'];
@@ -73,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
   
         toggleDevTerminalVisibility();
+        toggleDinoGameVisibility();
       });
     });
   
