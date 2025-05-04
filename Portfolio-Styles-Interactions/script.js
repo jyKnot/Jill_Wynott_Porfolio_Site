@@ -135,4 +135,23 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // form submission action
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('.chat-form');
+    const systemBubble = document.querySelector('.chat-bubble.system');
+  
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        // Show a temporary success message
+        systemBubble.textContent = "✅ Thanks for your message! I'll be in touch soon.";
+  
+        // Clear form fields after short delay (to allow Google Form submission)
+        setTimeout(() => {
+          form.reset();
+        }, 1000); // 1 second delay ensures form submits before resetting
+      });
+    }
+  });
   

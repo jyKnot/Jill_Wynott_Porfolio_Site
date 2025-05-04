@@ -201,35 +201,43 @@
       </section>
 
       <!-- Contact Section -->
-      <section id="contact-section">
-        <div class="chat-container">
-          <div class="chat-bubble system">
-            👋 Hi there! Got a question or want to connect? Drop me a message!
-          </div>
-          <form id="contact-form" class="chat-form">
-            <div class="chat-bubble user-input">
-              <label for="name">Your name</label>
-              <input type="text" id="name" name="name" required />
-            </div>
-            <div class="chat-bubble user-input">
-              <label for="email">Your email</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-            <div class="chat-bubble user-input">
-              <label for="message">Your message</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                required
-              ></textarea>
-            </div>
-            <div class="chat-bubble submit-bubble">
-              <button type="submit">💬 Send Message</button>
-            </div>
-          </form>
-        </div>
-      </section>
+    
+      
+<!-- Contact Section -->
+<section id="contact-section">
+  <div class="chat-container">
+    <div class="chat-bubble system">
+      👋 Hi there! Got a question or want to connect? Drop me a message!
+    </div>
+    <form
+      class="chat-form"
+      action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSf-f44KkVRyvBvU51pLLVjpRBYEsKmLMJzZmlUH2XQzIM2ETg/formResponse"
+      method="POST"
+      target="hidden_iframe"
+      onsubmit="submitted=true"
+    >
+      <div class="chat-bubble user-input">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="entry.953858677" required />
+      </div>
+      <div class="chat-bubble user-input">
+        <label for="email">Your email</label>
+        <input type="email" id="email" name="entry.620998730" required />
+      </div>
+      <div class="chat-bubble user-input">
+        <label for="message">Your message</label>
+        <textarea id="message" name="entry.661703303" rows="4" required></textarea>
+      </div>
+      <div class="chat-bubble submit-bubble">
+        <button type="submit">💬 Send Message</button>
+      </div>
+      <iframe name="hidden_iframe" style="display: none;"></iframe>
+    </form>
+  </div>
+</section>
+
+
+
     </main>
 
     <script src="script.js"></script>
@@ -239,3 +247,4 @@
     <p>© 2025 by Jill Wynott. All rights reserved.</p>
   </footer>
 </html>
+
