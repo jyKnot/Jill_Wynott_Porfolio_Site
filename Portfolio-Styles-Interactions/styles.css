@@ -820,6 +820,113 @@ Intro Section  layout
   
   
   
+
+/*Terminal look
+
+/* Terminal Wrapper */
+.terminal-box {
+    max-width: 700px;
+    margin: 2rem auto;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
+    border: 1px solid #333;
+    overflow: hidden;
+  }
+  
+  /* Terminal Header with Dots */
+  .terminal-header {
+    background-color: #2d2d2d;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid #444;
+    position: relative;
+  }
+  
+  .terminal-header .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .terminal-header .red { background-color: #ff5f56; }
+  .terminal-header .yellow { background-color: #ffbd2e; }
+  .terminal-header .green { background-color: #27c93f; }
+  
+  .terminal-title {
+    color: #d4d4d4;
+    font-size: 0.9rem;
+    margin-left: auto;
+    opacity: 0.6;
+    font-style: italic;
+  }
+  
+  /* Terminal Content Area */
+  .terminal-content {
+    padding: 1rem;
+    color: #d4d4d4;
+    background-color: #1e1e1e;
+    overflow-x: auto;
+  }
+  
+  .terminal-content pre {
+    margin: 0;
+    white-space: pre-wrap;
+    line-height: 1.6;
+  }
+  
+  .terminal-content .prompt {
+    color: #00ff90;
+    font-weight: bold;
+  }
+  
+  .terminal-content .output {
+    color: #9cdcfe;
+  }
+  
+
+
+  /* Terminal styles*/
+
+  .inline-terminal {
+    margin: 1rem 0;
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    font-family: 'Courier New', monospace;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 255, 144, 0.1);
+  }
+  
+  .inline-terminal .terminal-header {
+    background-color: #2d2d2d;
+    padding: 0.25rem 1rem;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .inline-terminal .terminal-title {
+    color: #00ff90;
+    font-style: italic;
+    margin-left: auto;
+  }
+  
+  .inline-terminal .terminal-content {
+    padding: 1rem;
+    color: #dcdcdc;
+    background-color: #1e1e1e;
+    outline: none;
+  }
+  
+
+  
+
   /* Footer styles */
 
   footer {

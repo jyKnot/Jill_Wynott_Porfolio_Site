@@ -1,16 +1,13 @@
-// Wait for DOM to be ready
 document.addEventListener('DOMContentLoaded', () => {
-    // THEME TOGGLING
     const themeButtons = document.querySelectorAll('.theme-toggle');
     const introImage = document.querySelector('#intro-section .intro-image img');
   
-    function toggleGameSectionForDevTheme() {
-      const gameSection = document.getElementById('game-section');
-      if (document.body.classList.contains('theme-dev')) {
-        gameSection.classList.remove('hidden');
-      } else {
-        gameSection.classList.add('hidden');
-      }
+    const terminalizedElements = new Map(); // Stores original elements
+  
+    function toggleDevTerminalVisibility() {
+      const devTerminal = document.getElementById('dev-terminal');
+      const isDev = document.body.classList.contains('theme-dev');
+      if (devTerminal) devTerminal.classList.toggle('hidden', !isDev);
     }
   
     function updateDevTagLabels() {
@@ -22,13 +19,47 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   
+    function wrapContentInTerminalBoxes() {
+      const elements = document.querySelectorAll('h1, h2, h3, h4, p');
+      elements.forEach(el => {
+        // Skip portfolio items or things already inside terminal boxes
+        if (el.closest('.portfolio-item') || el.closest('.inline-terminal')) return;
+  
+        const wrapper = document.createElement('div');
+        wrapper.className = 'terminal-box inline-terminal';
+        wrapper.innerHTML = `
+          <div class="terminal-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="terminal-title">~/content/${el.tagName.toLowerCase()}</span>
+          </div>
+          <div class="terminal-content" contenteditable="true">${el.outerHTML}</div>
+        `;
+  
+        terminalizedElements.set(wrapper, el.cloneNode(true)); // Save original
+        el.replaceWith(wrapper);
+      });
+    }
+  
+    function unwrapTerminalBoxes() {
+      terminalizedElements.forEach((originalEl, wrapper) => {
+        wrapper.replaceWith(originalEl);
+      });
+      terminalizedElements.clear(); // reset
+    }
+  
     themeButtons.forEach(button => {
       button.addEventListener('click', () => {
-        document.body.classList.remove('theme-light', 'theme-dark', 'theme-colorful', 'theme-dev');
         const themeClass = button.getAttribute('data-theme');
+        const wasDev = document.body.classList.contains('theme-dev');
+        const goingDev = themeClass === 'theme-dev';
+  
+        if (wasDev && !goingDev) unwrapTerminalBoxes();
+  
+        document.body.classList.remove('theme-light', 'theme-dark', 'theme-colorful', 'theme-dev');
         document.body.classList.add(themeClass);
   
-        // Update headshot image
         if (themeClass === 'theme-light') {
           introImage.src = './Assignment_2_Portfolio_Interactivity_Images/headshot-image-light.png';
         } else if (themeClass === 'theme-dark') {
@@ -36,19 +67,17 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (themeClass === 'theme-colorful') {
           introImage.src = './Assignment_2_Portfolio_Interactivity_Images/headshot-image-colour.png';
         } else if (themeClass === 'theme-dev') {
-            introImage.src = './Assignment_2_Portfolio_Interactivity_Images/headshot-image-dev.png';
-            updateDevTagLabels();         // Add tag labels like <h1>
-            toggleGameSectionForDevTheme(); // Show the game section
-            startSkierGame();             // Start the skier game
-          }
+          introImage.src = './Assignment_2_Portfolio_Interactivity_Images/headshot-image-dev.png';
+          updateDevTagLabels();
+          wrapContentInTerminalBoxes();
+        }
   
-        toggleGameSectionForDevTheme();
+        toggleDevTerminalVisibility();
       });
     });
   
-    // SCROLL-TRIGGERED ANIMATIONS
+    // Reveal-on-scroll
     const revealElements = document.querySelectorAll('.reveal-on-scroll, .slide-in-left, .slide-in-right');
-  
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -57,13 +86,10 @@ document.addEventListener('DOMContentLoaded', () => {
           entry.target.classList.remove('revealed');
         }
       });
-    }, {
-      threshold: 0.15
-    });
-  
+    }, { threshold: 0.15 });
     revealElements.forEach(el => observer.observe(el));
   
-    // PORTFOLIO POPUP FUNCTIONALITY
+    // Portfolio popup
     const popup = document.getElementById('portfolioPopup');
     const popupImage = document.getElementById('popupImage');
     const popupTitle = document.getElementById('popupTitle');
@@ -73,14 +99,9 @@ document.addEventListener('DOMContentLoaded', () => {
   
     portfolioItems.forEach(item => {
       item.addEventListener('click', () => {
-        const image = item.getAttribute('data-image');
-        const title = item.getAttribute('data-title');
-        const description = item.getAttribute('data-description');
-  
-        popupImage.src = image;
-        popupTitle.textContent = title;
-        popupDescription.textContent = description;
-  
+        popupImage.src = item.getAttribute('data-image');
+        popupTitle.textContent = item.getAttribute('data-title');
+        popupDescription.textContent = item.getAttribute('data-description');
         popup.classList.add('visible');
         popup.classList.remove('hidden');
       });
@@ -98,5 +119,4 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
   
