@@ -483,7 +483,7 @@ Intro Section  layout
   }
   
   .portfolio-container {
-    text-align: center;
+    text-align: left;
   }
 
   
@@ -518,11 +518,15 @@ Intro Section  layout
   }
   
   .portfolio-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Optional for full height alignment */
     padding: 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05); /* default */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
-    cursor: pointer; /*  This line makes the cursor a pointer */
+    cursor: pointer;
+    height: 100%; /* Equal height across grid items */
   }
   
   .portfolio-item:hover {
@@ -695,6 +699,7 @@ Intro Section  layout
   }
   
   /* Bubble base */
+
   .chat-bubble {
     border-radius: 20px;
     padding: 1rem 1.5rem;
@@ -707,6 +712,7 @@ Intro Section  layout
   }
   
   /* System message (intro) */
+
   .chat-bubble.system {
     background-color: #f1f1f1;
     align-self: flex-start;
@@ -715,8 +721,9 @@ Intro Section  layout
   }
   
   /* User input field bubble */
+
   .chat-bubble.user-input {
-    background-color: lightgray
+    background-color: lightgray;
     align-self: flex-end;
     display: flex;
     flex-direction: column;
@@ -741,21 +748,58 @@ Intro Section  layout
   
   /* Send button */
   
-  .chat-form button {
-    background-color: #009290;
-    color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  }
+/* Default Style */
+.chat-form button {
+  color:white;
+  background-color: #009290;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Light Theme */
+.theme-light .chat-form button {
+  background-color: #009290;
+}
+
+.theme-light .chat-form button:hover {
+  background-color: #007e7c;
+}
+
+/* Dark Theme */
+.theme-dark .chat-form button {
+  background-color: #0765ff;
+}
+
+.theme-dark .chat-form button:hover {
+  background-color: #2c2c8f;
+}
+
+/* Colorful Theme */
+.theme-colorful .chat-form button {
+  background-color: #009290
+}
+
+.theme-colorful .chat-form button:hover {
+  background-color: #03b4b1;
+}
+
+/* Dev Theme */
+.theme-dev .chat-form button {
+  background-color: #00ff90;
+  color: #1e1e1e;
+}
+
+.theme-dev .chat-form button:hover {
+  background-color: #00cc70;
+}
+
   
-  .chat-form button:hover {
-    background-color: #007e7c;
-  }
+
   
   /* Themed overrides */
 
@@ -768,6 +812,12 @@ Intro Section  layout
     background-color: #3b4455;
     color: #ffffff;
   }
+
+  .theme-dev .chat-bubble {
+    background-color: lightgray;
+    color: black;
+  }
+  
   
   
   /* Footer styles */
@@ -839,5 +889,9 @@ Intro Section  layout
   
   .theme-dev .social-fixed a:hover {
     color: #00ff90;
+  }
+
+  .hidden {
+    display: none !important;
   }
   
