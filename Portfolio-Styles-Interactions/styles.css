@@ -1,7 +1,8 @@
  
- /* -------------------------
-   Reset & Base
--------------------------- */
+
+   /*  CSS RESET */
+
+
 * {
     margin: 0;
     padding: 0;
@@ -19,9 +20,8 @@
 
 
  
- /* -------------------------
-     Responsive Adjustments
-  -------------------------- */
+ /* RESPONSIVE ADJUSTMENTS */
+
   
   @media (max-width: 768px) {
     #main-header-nav ul {
@@ -33,15 +33,14 @@
     #main-header-nav li {
       margin-bottom: 0.05rem;
     }
-  
-    /* Do NOT change theme-nav position on mobile */
   }
 
    /* Responsive Stack on Mobile */
+
    @media (max-width: 768px) {
     .intro-container {
       display: flex;
-      flex-direction: column-reverse; /* Stack image above, text below */
+      flex-direction: column-reverse; /* stack image above, text below */
       align-items: center;
       text-align: center;
       gap: 2rem;
@@ -56,9 +55,9 @@
     .intro-text {
       grid-area: text;
       margin-bottom: 0;
-      width: 100%;          /* Make it fill the container */
-      padding: 0 1rem;       /* Add horizontal padding if needed */
-      text-align: center;    /* Center text content */
+      width: 100%;          /* make it fill the container */
+      padding: 0 1rem;     
+      text-align: center;   
     }
   
     .intro-image img {
@@ -70,10 +69,71 @@
     }
   }
   
+    /* MAIN HEADER NAV (Top Horizontal) */
   
-  /* -------------------------
-   Dev Theme Styling
--------------------------- */
+    #main-header-nav {
+      width: 100%;
+      background-color: transparent;
+      padding: 1rem;
+    }
+    
+    #main-header-nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+    
+    #main-header-nav a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: bold;
+    }
+  
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 1%;
+  }
+  
+    nav ul li a {
+      color: whitesmoke;
+      text-decoration: none;
+      padding: 20px;
+  }
+  
+    nav ul li a:hover {
+      color: grey;
+  }
+  
+  .intro-image img {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      display: block;
+      border-radius: 12px;
+      object-fit: cover; /* optional: helps with consistent crop */
+      transition: opacity 0.5s ease;
+    }
+  
+  
+  /*  THEME STYLING */
+
+  /* theme toggle nav (fixed on the right side) */
+  
+    #theme-nav {
+      position: fixed;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1000;
+    }
+
+  /* Dev Theme Styling */
 
 .theme-dev {
     background-color: #1e1e1e;
@@ -141,8 +201,7 @@
     color: #00ff90;
     font-weight: bold;
   }
-  
-  /* Optional Code Snippet Style */
+
   .code-snippet {
     display: none;
     background-color: #1e1e1e;
@@ -187,21 +246,32 @@
   
 
   
-  /* -------------------------
-     Scrollytelling
-  -------------------------- */
+  /* SCROLLYTELLING */
+
+  /* Reveal on scroll sytles */
 
   .reveal-on-scroll {
     opacity: 0;
-    transform: translateY(50px); /* Vertical offset before appearing */
+    transform: translateY(50px); /* vertical offset before appearing */
     transition: opacity 2s ease-out, transform 10s ease-out;
     will-change: opacity, transform;
   }
   
   .reveal-on-scroll.revealed {
     opacity: 1;
-    transform: translateY(0); /* Final position */
+    transform: translateY(0); /* sets final position */
   }
+
+  /* Default hidden state */
+
+    /* Slide in from left */
+
+  .slide-in-left {
+      opacity: 0;
+      transform: translateX(200px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+      will-change: opacity, transform;
+    }
 
 /* Slide in from right */
 
@@ -216,75 +286,31 @@
     opacity: 1;
     transform: translateX(0);
   }
-  
-  /* -------------------------
-     Main Header Nav (Top Horizontal)
-  -------------------------- */
-  
-  #main-header-nav {
-    width: 100%;
-    background-color: transparent;
-    padding: 1rem;
-  }
-  
-  #main-header-nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    list-style: none;
-  }
-  
-  #main-header-nav a {
-    text-decoration: none;
-    color: inherit;
-    font-weight: bold;
-  }
 
-  nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    padding: 1%;
-}
+    /* When revealed */
 
-  nav ul li a {
-    color: whitesmoke;
-    text-decoration: none;
-    padding: 20px;
-}
-
-  nav ul li a:hover {
-    color: grey;
-}
-
-.intro-image img {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    display: block;
-    border-radius: 12px;
-    object-fit: cover; /* optional: helps with consistent crop */
-    transition: opacity 0.5s ease;
+    .slide-in-left.revealed {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  
+    /* Slide in from right */
+  
+  .slide-in-right {
+    opacity: 0;
+    transform: translateX(200px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    will-change: opacity, transform;
   }
   
-  /* -------------------------
-     Theme Toggle Nav (Fixed Right Side)
-  -------------------------- */
-  
-  #theme-nav {
-    position: fixed;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    z-index: 1000;
+  .slide-in-right.revealed {
+    opacity: 1;
+    transform: translateX(0);
   }
   
-  /* -------------------------
-     Button Styling
-  -------------------------- */
+
+  
+  /*  THEME BUTTON STYLING */
   
   button {
     background-color: transparent;
@@ -325,9 +351,8 @@
     font-weight: bold;
   }
   
-  /* -------------------------
-     Theme Classes and styles
-  -------------------------- */
+
+  /*  THEME CLASSES AND STYLES */
   
   .theme-light {
     background-color: #ffffff;
@@ -359,15 +384,16 @@
   .theme-colorful #main-header-nav a {
     color: #009290;
   }
-    /* -------------------------
-Intro Section  layout
-  -------------------------- */
+
+
+
+    /* INTRO SECTION */
 
 
 #intro-section {
     padding: 2rem;
     padding-top: 9rem;
-    padding-bottom: 20rem; /* Adds scroll space before next section */
+    padding-bottom: 20rem; /* *Adds scroll space before next section* */
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -392,42 +418,7 @@ Intro Section  layout
     font-size: 2rem;
   }
 
-    
-    /* -------------------------
-   Intro Text Slide in Section  layout
-  -------------------------- */
-
-
-  /* Default hidden state */
-
-.slide-in-left {
-    opacity: 0;
-    transform: translateX(200px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-    will-change: opacity, transform;
-  }
-  
-  /* When revealed */
-
-  .slide-in-left.revealed {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  /* Slide in from right */
-
-.slide-in-right {
-  opacity: 0;
-  transform: translateX(200px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
-  will-change: opacity, transform;
-}
-
-.slide-in-right.revealed {
-  opacity: 1;
-  transform: translateX(0);
-}
-  
+     
   /* Image Styling */
 
   .intro-image img {
@@ -435,9 +426,10 @@ Intro Section  layout
     height: auto;
   }
   
-    /* -------------------------
-    Story Section  layout
-  -------------------------- */
+
+ 
+  
+    /* STORY SECTION */
 
 #story-section {
     padding: 4rem 2rem;
@@ -448,18 +440,14 @@ Intro Section  layout
   .story-container {
     padding: 2rem;
     border-radius: 12px;
-    /*  transform: translateY(50px); */
-    /* opacity: 0; */
-    /* Let .slide-in-right handle that */
+
   }
-  
-  /* Triggered when revealed */
+
   .story-container.revealed {
     opacity: 1;
     transform: translateY(0);
   }
   
-  /* Optional: Responsive text */
   .story-container h2 {
     margin-bottom: 1rem;
   }
@@ -471,9 +459,7 @@ Intro Section  layout
   }
 
   
-  /* -------------------------
-   Portfolio Section Layout
--------------------------- */
+  /* PORTFOLIO SECTION */
 
 #portfolio-section {
     padding: 4rem 2rem;
@@ -497,7 +483,7 @@ Intro Section  layout
     line-height: 1.6;
     margin-bottom: 1rem;
     padding-top: 1.5rem;
-    padding-bottom: 20rem; /* This padding now only affects the intro paragraph */
+    padding-bottom: 20rem; /* this padding only affects the intro paragraph */
     max-width: 800px;
     text-align: center;
   }
@@ -568,19 +554,16 @@ Intro Section  layout
     margin-top: 1rem;
   }
   
-/* ==========================
-   Portfolio Popup (Expanded View)
-========================== */
+/* PORTFOLIO POPUP(Expanded View) */
 
 .portfolio-popup {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black backdrop */
+    background: rgba(0, 0, 0, 0.6); 
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 2000;
-  
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
@@ -593,12 +576,14 @@ Intro Section  layout
     pointer-events: auto;
   }
   
-  /* Optionally hide completely (safeguard class) */
+  /* hide completely (safeguard class) */
+
   .portfolio-popup.hidden {
     display: none;
   }
 
- /* Base Popup Style (default light theme) */
+ /* base popup style (default light theme) */
+
 .popup-content {
   background-color: #fff;
   color: #333;
@@ -610,15 +595,22 @@ Intro Section  layout
   position: relative;
   text-align: center;
   animation: fadeIn 0.3s ease;
+
+  /*  enable scrolling inside popup when on screens that the content does not fit into */
+
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
-/* Light Theme */
+/* Light theme popup style */
+
 .theme-light .popup-content {
   background-color: #ffffff;
   color: #333333;
 }
 
-/* Dark Theme */
+/* Dark theme popup style */
+
 .theme-dark .popup-content {
   background-color: #111111;
   color: #f1f1f1;
@@ -630,7 +622,7 @@ Intro Section  layout
   color: #ccc;
 }
 
-/* Colorful Theme */
+/* Colorful theme popup style */
 
 .theme-colorful .popup-content {
   background: linear-gradient(145deg, #2b3444, #3c4a60);
@@ -643,7 +635,8 @@ Intro Section  layout
   color: #ffffff;
 }
 
-/* Dev Theme */
+/* Dev theme popup style */
+
 .theme-dev .popup-content {
   background-color: #252526;
   color: #d4d4d4;
@@ -657,7 +650,7 @@ Intro Section  layout
 }
 
   
-  /* Responsive Image */
+  /* Responsive Image in portfolio popup*/
 
   .popup-content img {
     width: 100%;
@@ -696,6 +689,7 @@ Intro Section  layout
   }
   
   /* Fade animation */
+
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -708,9 +702,7 @@ Intro Section  layout
   }
   
   
-  /* -------------------------
-   Contact Section 
--------------------------- */
+  /* CONATCT FORM SECTION */
 
 
 #contact-section {
@@ -741,8 +733,6 @@ Intro Section  layout
     flex-direction: column;
     gap: 1.5rem;
   }
-  
-  /* Bubble base */
 
   .chat-bubble {
     border-radius: 20px;
@@ -775,7 +765,6 @@ Intro Section  layout
     border-radius: 20px 20px 0 20px;
   }
 
-  
   /* Inputs inside chat bubbles */
 
   .chat-bubble.user-input input,
@@ -790,9 +779,10 @@ Intro Section  layout
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
   }
   
-  /* Send button */
+  /* Submit button */
   
 /* Default Style */
+
 .chat-form button {
   color:white;
   background-color: #009290;
@@ -805,7 +795,8 @@ Intro Section  layout
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Light Theme */
+/* Light theme submit button */
+
 .theme-light .chat-form button {
   background-color: #009290;
 }
@@ -814,7 +805,7 @@ Intro Section  layout
   background-color: #007e7c;
 }
 
-/* Dark Theme */
+/* Dark theme submit button */
 .theme-dark .chat-form button {
   background-color: #0765ff;
 }
@@ -823,7 +814,7 @@ Intro Section  layout
   background-color: #2c2c8f;
 }
 
-/* Colorful Theme */
+/* Colorful theme submit button */
 .theme-colorful .chat-form button {
   background-color: #009290
 }
@@ -832,7 +823,7 @@ Intro Section  layout
   background-color: #03b4b1;
 }
 
-/* Dev Theme */
+/* Dev theme submit button */
 .theme-dev .chat-form button {
   background-color: #00ff90;
   color: #1e1e1e;
@@ -842,7 +833,6 @@ Intro Section  layout
   background-color: #00cc70;
 }
 
-  
 
   
   /* Themed overrides */
@@ -865,9 +855,10 @@ Intro Section  layout
   
   
 
-/*Terminal look
+/*Terminal look */
 
 /* Terminal Wrapper */
+
 .terminal-box {
     margin: 2rem auto;
     background-color: #1e1e1e;
@@ -878,7 +869,8 @@ Intro Section  layout
     overflow: hidden;
   }
   
-  /* Terminal Header with Dots */
+  /* Terminal header with dots */
+
   .terminal-header {
     background-color: #2d2d2d;
     padding: 0.5rem 1rem;
@@ -908,7 +900,8 @@ Intro Section  layout
     font-style: italic;
   }
   
-  /* Terminal Content Area */
+  /* Terminal content area */
+
   .terminal-content {
     padding: 1rem;
     color: #d4d4d4;
@@ -970,9 +963,10 @@ Intro Section  layout
 
   
 
-/* Dino Game (dev mode) */
+/* Dino game (dev mode) */
 
-/* Dino Game Styling (Dev Mode Only) */
+/* dino game styling (dev mode only) */
+
 .theme-dev .game-container {
   max-width: 900px;
   margin: 4rem auto;
@@ -999,7 +993,8 @@ Intro Section  layout
   box-shadow: 0 0 10px rgba(0, 255, 144, 0.1);
 }
 
-/* Hide Dino game for non-dev themes */
+/* Hide dino game for non-dev themes */
+
 .game-container {
   display: none;
 }
@@ -1020,6 +1015,7 @@ Intro Section  layout
   }
   
   /* Responsive dark mode */
+
   .theme-dark footer {
     background-color: #111;
     color: #f1f1f1;
@@ -1027,6 +1023,7 @@ Intro Section  layout
   }
   
   /* Colorful mode */
+
   .theme-colorful footer {
     background-color: #2a2f3a;
     color: #ffffff;
@@ -1034,6 +1031,7 @@ Intro Section  layout
   }
   
   /* Dev mode */
+
   .theme-dev footer {
     background-color: #1e1e1e;
     color: #00ff90;
@@ -1045,9 +1043,10 @@ Intro Section  layout
 
   
 
-  /* Socials */
+  /* SOCIALS */
 
-  /* Fixed Social Links (Top Left Corner) */
+  /* Fixed social links (top left corner) */
+
 .social-fixed {
     position: fixed;
     top: 1rem;
@@ -1069,7 +1068,8 @@ Intro Section  layout
     transform: scale(1.2);
   }
   
-  /* Optional: Theme-specific overrides */
+  /* Social theme specific overrides */
+
   .theme-dark .social-fixed a:hover {
     color: darkgray;
   }
@@ -1083,6 +1083,6 @@ Intro Section  layout
   }
 
   .hidden {
-    display: none !important;
+    display: none !important; 
   }
   

@@ -15,11 +15,16 @@
 />
    
   <body>
-    <!-- Portfolio Popup -->
+
+
+    <!-- PORTFOLIO POPUP -->
+
+
     <div class="portfolio-popup hidden" id="portfolioPopup">
       <div class="popup-content">
         <span class="popup-close" id="popupClose">&times;</span>
-        <img src="" alt="Project Image" id="popupImage" />
+        <img src="" alt="Project Image" id="popupImage"/> 
+        <!-- leaving img src empty on purpose, as image is pulled from individual portfolio items (flagged by online HTML validator freeformat.com) -->
         <h3 id="popupTitle">Project Title</h3>
         <p id="popupDescription">More detailed description here.</p>
       </div>
@@ -32,7 +37,11 @@
       <a href="https://www.behance.net/jillwynott" target="_blank" aria-label="Behance"><i class="fab fa-behance"></i></a>
     </div>
 
-    <!-- Theme Nav -->
+
+
+    <!-- THEME NAVIGATION -->
+
+
     <header>
       <nav id="theme-nav">
         <button class="theme-toggle light" data-theme="theme-light">
@@ -58,8 +67,14 @@
       </nav>
     </header>
 
+
+
     <main>
-      <!-- Intro Section -->
+
+
+      <!-- INTRO SECTION -->
+
+
       <section id="intro-section" class="reveal-on-scroll">
         <div class="intro-container">
           <div class="intro-text slide-in-left">
@@ -75,14 +90,22 @@
         </div>
       </section>
 
-      <!-- Dino Game (dev mode) -->
+
+
+      <!-- DINO GAME (dev mode) -->
+
+
       <div class="game-container">
         <h1>Dino Game Arcade</h1>
         <iframe src="https://wayou.github.io/t-rex-runner/"></iframe>
       </div>
    
 
-      <!-- Story Section -->
+
+
+      <!-- SCROLLYTELLING STORY SECTION -->
+
+
       <section id="story-section">
         <div class="story-container slide-in-right">
           <p>
@@ -93,13 +116,17 @@
 
 
 
-      <!-- Portfolio Section -->
+
+      <!-- PORTFOLIO SECTION -->
+
+
       <section id="portfolio-section">
         <div class="portfolio-container slide-in-right">
          <h2>See some of my latest work</h2><br><br>
           <div class="portfolio-grid">
 
 
+            <!-- Portfolio item 1 -->
 
             <div
               class="portfolio-item"
@@ -108,12 +135,13 @@
               data-description="At Whistler Sailing, I manage all aspects of the website, handling content updates to ensure a seamless user experience and clear communication of programs, events, and announcements."
             >
               <img
-                src="./assets/WSA_Full_ Mockup_web.jpg"
-                alt="Whistler Sailing"
-              />
+                src="./assets/WSA_Full_Mockup_web.jpg" alt="Whistler Sailing"/>
               <h3>Whistler Sailing</h3>
               <p>Web Management</p>
             </div>
+
+
+              <!-- Portfolio item 2 -->
 
             <div
               class="portfolio-item"
@@ -131,6 +159,7 @@
             </div>
 
 
+              <!-- Portfolio item 3 -->
 
             <div
               class="portfolio-item"
@@ -148,7 +177,7 @@
 
 
 
-
+          <!-- Portfolio item 4 -->
 
             <div
             class="portfolio-item"
@@ -165,6 +194,8 @@
           </div>
 
 
+          <!-- Portfolio item 5 -->
+
           <div
           class="portfolio-item"
           data-title="Template Creation"
@@ -178,6 +209,9 @@
           <h3>Teamplate Creation</h3>
           <p>Powerpoint .potx creation</p>
         </div>
+
+
+        <!-- Portfolio item 6 -->
 
 
         <div
@@ -194,16 +228,23 @@
         <p>Design of promotional materials</p>
       </div>
 
-      <!-- Add more projects here -->
+
+
+      <!-- <INSERT MORE PROJECTS HERE> -->
 
           </div>
         </div>
       </section>
 
-      <!-- Contact Section -->
+
+
+
     
       
-<!-- Contact Section -->
+    <!-- CONTACT SECTION -->
+
+    <!-- linked form to a google form for submission simplicity -->
+
 <section id="contact-section">
   <div class="chat-container">
     <div class="chat-bubble system">
@@ -218,7 +259,7 @@
     >
       <div class="chat-bubble user-input">
         <label for="name">Your name</label>
-        <input type="text" id="name" name="entry.953858677" required />
+        <input type="text" id="name" name="entry.953858677" required /> 
       </div>
       <div class="chat-bubble user-input">
         <label for="email">Your email</label>
@@ -241,10 +282,15 @@
     </main>
 
     <script src="script.js"></script>
-  </body>
-  <div class="footer">
-    <footer>
-    <p>© 2025 by Jill Wynott. All rights reserved.</p>
-  </footer>
+
+
+
+<!-- FOOTER SECTION -->
+
+
+<footer class="footer">
+  <p>&copy; 2025 by Jill Wynott. All rights reserved.</p>
+</footer>
+</body>
 </html>
 
