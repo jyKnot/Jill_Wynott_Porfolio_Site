@@ -8,29 +8,182 @@
       body {
         font-family: "Questrial", sans-serif;
         transition: background-color 0.3s, color 0.3s;
-        background-color: black;
-        color: white;
+        color: black;
         margin: 5rem;
+        max-width: 800px;
+        font-size: large;
       }
 
       h3 {
         color: #009290;
       }
-      
+
+      .feedback-form {
+        max-width: 700px;
+        margin: 2rem auto;
+        background: #f7fcfc;
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        font-family: "Questrial", sans-serif;
+      }
+
+      .feedback-form h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+        color: #2c3e50;
+      }
+
+      .feedback-form label {
+        display: block;
+        margin-top: 1rem;
+        font-weight: 600;
+        color: #34495e;
+      }
+
+      .feedback-form textarea,
+      .feedback-form input {
+        width: 100%;
+        padding: 0.75rem;
+        margin-top: 0.25rem;
+        border: 1px solid #ccc;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        resize: vertical;
+      }
+
+      .feedback-form button {
+        margin-top: 1.5rem;
+        background-color: #009290;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      .feedback-form button:hover {
+        background-color: #1e6fb3;
+      }
     </style>
   </head>
   <body>
     <h1>Interactive Personal Website - Assignment 2</h1>
     <br />
+    <h3>Jill Wynott</h3>
     <h2>One Page Summary</h2>
-    <h3>Jill Wynott</h3><br><br>
+    <br /><br />
 
-
+    <h3>Evolving from Assignment 1</h3>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa voluptatibus
-      quibusdam, quo dignissimos, impedit nihil explicabo, illum at expedita
-      fugiat similique ipsum assumenda. Soluta, quos totam deserunt facilis
-      aliquam molestias.
+      After reviewing my first assignment, I used this opportunity to redesign
+      my portfolio site into something more dynamic and interactive. I moved
+      away from a block-based, image heavy structure and leaned into a cleaner,
+      story-driven experience. I have always been curious about scrollytelling,
+      and generally like it, but hadn't experimented with it before, so I made
+      that a core component. I also aimed to implement a dark mode, which grew
+      in scope into four distinct themes.
     </p>
+    <br />
+    <h3>Starting from Scratch</h3>
+    <p>
+      This second assignment uses entirely new code. A personal goal was to
+      create something that could be launched confidently on due day, being
+      fully functional and stable. I incorporated feedback from Assignment 1 and
+      used an online code validation tool (FreeFormatter) to clean up errors and
+      improve structure.
+    </p>
+    <br /><br />
+    <h2>Challenges</h2>
+    <h3>JavaScript</h3>
+    <p>
+      JavaScript was by far the biggest hurdle. My process was very
+      result-driven: I envisioned what I wanted the final experience to be and
+      then worked backward to figure out how to make it happen. While I feel I
+      have learned JavaScript basics through class session and practice, I still
+      leaned heavily on AI tools to troubleshoot and bring my ideas to life.
+      That said, I made sure I understood what each line of code was doing. I
+      have realized that for me, learning JavaScript will likely come more out
+      of necessity than pure interest, and is something I will need to continue
+      working on.
+    </p>
+    <br />
+    <h3>The Bug</h3>
+    <p>
+      There is an unresolved bug that's proven difficult to isolate. After
+      entering and exiting the Dev theme, the portfolio popups sometimes lose
+      their headings and content. It doesn't happen consistently, and I haven't
+      been able to replicate it reliably, making debugging quite challenging.
+    </p>
+    <br />
+    <h3>Dev mode 'Coolness'</h3>
+    <p>
+      Initially, I had planned a more playful Dev Mode experience, but scope
+      creep, especially around JavaScript, quickly became overwhelming. In the
+      end, I chose to integrate the Chrome Dino game as a simple, nostalgic
+      fallback that still added interaction. This was also my first time
+      extracting code from GitHub, which was an empowering milestone.
+    </p>
+    <br />
+    <h2>Wins & Reflections</h2>
+    <p>
+      Despite the bug and the learning curve, I think I'm proud of the outcome.
+      The site feels more “me” than anything I've built before. I also really
+      appreciated the creative flexibility of working from a blank canvas rather
+      than within the constraints of a template.
+    </p>
+    <br />
+
+    <h2>Feedback</h2>
+    <p>
+      I'm wondering if I can pick your brain and ask a few industry-related
+      questions specific to my site. As someone new to this field, I'm eager to
+      learn what works, and what doesn't, from a professional perspective.
+      Thanks in advance!
+    </p>
+    <div class="feedback-form">
+      <h2>Questions</h2>
+
+      <form action="YOUR_GOOGLE_FORM_ACTION_URL" method="POST" target="_blank">
+        <label for="q1"
+          >Is this style of interactive storytelling (like scrollytelling)
+          overdone or irritating for users, especially on mobile?</label
+        >
+        <textarea
+          id="q1"
+          name="entry.1234567890"
+          rows="4"
+          placeholder="Thanks for your thoughts..."
+        ></textarea>
+
+        <label for="q2"
+          >Between my
+          <a href="https://www.jillwynott.com/" target="_blank"
+            >live Wix portfolio site</a
+          >, my first assignment, and this iteration, do you have a preference?
+          Which one feels most effective?</label
+        >
+        <textarea
+          id="q2"
+          name="entry.2345678901"
+          rows="4"
+          placeholder="Your preference..."
+        ></textarea>
+
+        <label for="q3"
+          >Does my approach to Dev Mode feel 'tired,' or outdated from an
+          industry perspective?</label
+        >
+        <textarea
+          id="q3"
+          name="entry.3456789012"
+          rows="4"
+          placeholder="Your feedback..."
+        ></textarea>
+
+        <button type="submit">Submit Feedback</button>
+      </form>
+    </div>
   </body>
 </html>
