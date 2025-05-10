@@ -72,8 +72,8 @@
     <h1>Interactive Personal Website - Assignment 2</h1>
     <br />
     <h3>Jill Wynott</h3>
-    <h2>One Page Summary</h2>
     <br /><br />
+    <h2>One Page Summary</h2>
 
     <h3>Evolving from Assignment 1</h3>
     <p>
@@ -92,7 +92,7 @@
       create something that could be launched confidently on due day, being
       fully functional and stable. I incorporated feedback from Assignment 1 and
       used an online code validation tool (FreeFormatter) to clean up errors and
-      improve structure.
+      improve structure. 
     </p>
     <br /><br />
     <h2>Challenges</h2>
@@ -111,7 +111,7 @@
     <br />
     <h3>The Bug</h3>
     <p>
-      There is an unresolved bug that's proven difficult to isolate. After
+      There is an unresolved issue that's proven difficult to isolate. After
       entering and exiting the Dev theme, the portfolio popups sometimes lose
       their headings and content. It doesn't happen consistently, and I haven't
       been able to replicate it reliably, making debugging quite challenging.
@@ -119,11 +119,11 @@
     <br />
     <h3>Dev mode 'Coolness'</h3>
     <p>
-      Initially, I had planned a more playful Dev Mode experience, but scope
+      Initially, I had planned a more playful Dev Theme experience, but scope
       creep, especially around JavaScript, quickly became overwhelming. In the
       end, I chose to integrate the Chrome Dino game as a simple, nostalgic
-      fallback that still added interaction. This was also my first time
-      extracting code from GitHub, which was an empowering milestone.
+      fallback that still added interaction. This was also my first time using
+      code from GitHub, which was an empowering milestone.
     </p>
     <br />
     <h2>Wins & Reflections</h2>
@@ -139,51 +139,79 @@
     <p>
       I'm wondering if I can pick your brain and ask a few industry-related
       questions specific to my site. As someone new to this field, I'm eager to
-      learn what works, and what doesn't, from a professional perspective.
+      learn what works and what doesn't, from a professional perspective.
+      <br /><br />
       Thanks in advance!
     </p>
+
+
     <div class="feedback-form">
       <h2>Questions</h2>
 
-      <form action="YOUR_GOOGLE_FORM_ACTION_URL" method="POST" target="_blank">
-        <label for="q1"
-          >Is this style of interactive storytelling (like scrollytelling)
-          overdone or irritating for users, especially on mobile?</label
-        >
-        <textarea
-          id="q1"
-          name="entry.1234567890"
-          rows="4"
-          placeholder="Thanks for your thoughts..."
-        ></textarea>
-
-        <label for="q2"
-          >Between my
-          <a href="https://www.jillwynott.com/" target="_blank"
-            >live Wix portfolio site</a
-          >, my first assignment, and this iteration, do you have a preference?
-          Which one feels most effective?</label
-        >
-        <textarea
-          id="q2"
-          name="entry.2345678901"
-          rows="4"
-          placeholder="Your preference..."
-        ></textarea>
-
-        <label for="q3"
-          >Does my approach to Dev Mode feel 'tired,' or outdated from an
-          industry perspective?</label
-        >
-        <textarea
-          id="q3"
-          name="entry.3456789012"
-          rows="4"
-          placeholder="Your feedback..."
-        ></textarea>
-
-        <button type="submit">Submit Feedback</button>
-      </form>
-    </div>
+   
+<div class="feedback-form">
+    <h2>Feedback Form</h2>
+    <form id="customForm">
+      <label for="q1">
+        Is this style of scrollytelling overdone or irritating for users, especially on mobile?
+      </label>
+      <textarea
+        id="q1"
+        name="entry.894807401"
+        rows="4"
+        placeholder="Your thoughts..."
+      ></textarea>
+  
+      <label for="q2">
+        Between my
+        <a href="https://www.jillwynott.com/" target="_blank">live Wix portfolio site</a>,
+        my first assignment, and this iteration, do you have a preference?
+        Which one feels most effective?
+      </label>
+      <textarea
+        id="q2"
+        name="entry.262507991"
+        rows="4"
+        placeholder="Your preference..."
+      ></textarea>
+  
+      <label for="q3">
+        Does my approach to Dev Mode feel 'tired,' or outdated from an industry perspective?
+      </label>
+      <textarea
+        id="q3"
+        name="entry.788267542"
+        rows="4"
+        placeholder="Your feedback..."
+      ></textarea>
+  
+      <button type="submit">Submit Feedback</button>
+    </form><br>
+  
+    <div id="thankYouMessage">Thanks for your input!</div>
+  </div>
+  
+  <script>
+    const form = document.getElementById('customForm');
+    const thankYouMessage = document.getElementById('thankYouMessage');
+  
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // Stop default form redirect
+      const formData = new FormData(form);
+  
+      fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLSe00G4LAyVxW9yNx-MGasG6nKTz66oBOWXvLnMTltoab0c4xw/formResponse', {
+        method: 'POST',
+        mode: 'no-cors',
+        body: formData
+      }).then(() => {
+        form.reset(); // Clear form
+        form.style.display = 'none'; // Hide form
+        thankYouMessage.style.display = 'block'; // Show message
+      }).catch((error) => {
+        console.error('Submission error:', error);
+      });
+    });
+  </script>
+  
   </body>
-</html>
+  </html>
