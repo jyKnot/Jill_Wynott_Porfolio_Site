@@ -120,13 +120,14 @@ document.addEventListener('DOMContentLoaded', () => {  // ensures the script run
           wrapContentInTerminalBoxes(); // calls function to activate terminal styling
   
           // Terminal boot animation
-          const bootTerminal = document.getElementById('boot-terminal');
-          const bootLines = document.getElementById('boot-lines');
-          bootTerminal.classList.remove('hidden');
+          const bootTerminal = document.getElementById('boot-terminal');// find the part of the page that looks like a terminal window
+          const bootLines = document.getElementById('boot-lines'); // find the area inside the terminal window where messages will appear
+          bootTerminal.classList.remove('hidden'); // make the terminal window appear by changing its CSS classes
           bootTerminal.classList.add('visible');
 
+          // this is a list of pretend "boot-up" messages, like what you'd see on a computer starting up
         const messages = [
-              "[OK] Booting Developer Theme...",
+              "[OK] Booting Developer Theme...",  
               "[OK] Checking system integrity...",
               "[OK] Loading terminal interface...",
               "[OK] Applying dark shell styling...",
@@ -139,20 +140,20 @@ document.addEventListener('DOMContentLoaded', () => {  // ensures the script run
               "Welcome, @yKnot"
             ];
 
-          let idx = 0;
+          let idx = 0;  // keeps track of which message we’re showing
           function typeBootLine() {
-            if (idx < messages.length) {
+            if (idx < messages.length) {  // add the current message to the terminal
               bootLines.textContent += messages[idx] + "\n";
               idx++;
-              setTimeout(typeBootLine, 800);
-            } else {
+              setTimeout(typeBootLine, 800);    // wait 800 milliseconds, then show the next message
+            } else {     // after all messages are shown, wait 3 seconds, then hide the terminal
               setTimeout(() => {
                 bootTerminal.classList.remove('visible');
                 bootTerminal.classList.add('hidden');
               }, 3000); // fade out after full message
             }
           }
-          typeBootLine();
+          typeBootLine(); // start typing the boot messages when the page runs this script
 
 
                   }
@@ -214,7 +215,9 @@ if (!isMobile) {
 
 
 
-// ========== PORTFOLIO POPUP ==========
+// PORTFOLIO POPUP 
+
+
 const popup = document.getElementById('portfolioPopup');
 const popupImage = document.getElementById('popupImage');
 const popupTitle = document.getElementById('popupTitle');
