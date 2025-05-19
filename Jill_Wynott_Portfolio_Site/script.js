@@ -40,9 +40,29 @@ document.addEventListener('DOMContentLoaded', () => {  // ensures the script run
         const wrapper = document.createElement('div'); // makes a new html div element in a variable named wrapper - does not exist on the page yet
         wrapper.className = 'terminal-box inline-terminal'; // terminal-box - makes the div look like a terminal. inline-terminal - styling that keep ths terminal block inline
         // - take this box, and put these two labels into it
-        const cloned = el.cloneNode(true); // makes a copy of the html element and stores it in variable cloned
-        // the copy will be the one we mark up, leaving the original untouched
-        cloned.setAttribute('contenteditable', 'true'); // this makes the cloned HTML editable in the browser, so the user can click inside and change its content
+        
+        
+        
+        const cloned = el.cloneNode(true);
+        cloned.setAttribute('contenteditable', 'true');
+        cloned.classList.add('dev-editable-content');
+
+        cloned.addEventListener('focus', () => {
+          const cursor = wrapper.querySelector('.blinking-cursor-overlay');
+          if (cursor) cursor.style.display = 'block';
+        });
+
+        cloned.addEventListener('blur', () => {
+          const cursor = wrapper.querySelector('.blinking-cursor-overlay');
+          if (cursor) cursor.style.display = 'none';
+        });
+
+
+        const cursor = document.createElement('div');
+        cursor.className = 'blinking-cursor-overlay';
+        wrapper.appendChild(cursor);
+
+
 
 
 
@@ -94,6 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {  // ensures the script run
           introImage.src = './assets/headshot-image-dev.png';
           updateDevTagLabels(); // calls function to add data-tag attribute to all headings and paragraphs
           wrapContentInTerminalBoxes(); // calls function to activate terminal styling
+          document.querySelector('.intro-text h1').textContent = "Hi, I'm @yKnot. ";
+
         }
   
         toggleDevTerminalVisibility(); // checks if theme dev is active, and if so shows the dev terminal
@@ -103,6 +125,8 @@ document.addEventListener('DOMContentLoaded', () => {  // ensures the script run
   
 
 
+
+    
 
     // SCROLLYTELLING 
 
@@ -121,6 +145,10 @@ document.addEventListener('DOMContentLoaded', () => {  // ensures the script run
     }, { threshold: 0.15 }); // threshold set to action when 15% of the element is visable on the viewport
     revealElements.forEach(el => observer.observe(el)); // assigns a 'motion sensor' to each element on the page with a reveal related class
   
+
+    // TURN OFF SCROLLYTELLING ON MOBILE 
+
+
 const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
 if (!isMobile) {
@@ -146,28 +174,67 @@ if (!isMobile) {
 
 
 
-  // PORTFOLIO POPUP
 
-    const popup = document.getElementById('portfolioPopup'); // selects all HTML elements with ID 'portfolioPopup' and stores it in variable popup
-    const popupImage = document.getElementById('popupImage'); // selects all HTML elements with ID 'popupImage' and stores it in variable popupImage
-    const popupTitle = document.getElementById('popupTitle'); // selects all HTML elements with ID 'popupTitle' and stores it in variable popupTitle
-    const popupDescription = document.getElementById('popupDescription'); // selects all HTML elements with ID 'popupDescription' and stores it in variable popupDescription
-    const popupClose = document.getElementById('popupClose'); // selects all HTML elements with ID 'popupClose' and stores it in variable popupClose
-    const portfolioItems = document.querySelectorAll('.portfolio-item'); // selects all HTML elements with a class .portfolio-item and stores them in the variable portflioItems
-  
-    portfolioItems.forEach(item => { // loops through each portflio item
-      item.addEventListener('click', () => { // adds and event listener, listening for a click
-        popupImage.src = item.getAttribute('data-image'); // pulls the image from the data-image and puts it into the popup
-        popupTitle.textContent = item.getAttribute('data-title'); // grabs the specific title assigned in the HTML 
-        popupDescription.textContent = item.getAttribute('data-description'); // grabs the specific description assigned in the HTML 
-        popup.classList.add('visible'); // popup becomes viable to user
-        popup.classList.remove('hidden'); // removes the hidden class to ensure the popup is visable
-      });
+// ========== PORTFOLIO POPUP ==========
+const popup = document.getElementById('portfolioPopup');
+const popupImage = document.getElementById('popupImage');
+const popupTitle = document.getElementById('popupTitle');
+const popupDescription = document.getElementById('popupDescription');
+const popupClose = document.getElementById('popupClose');
+const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+// Check that everything exists before binding events
+if (popup && popupImage && popupTitle && popupDescription && popupClose) {
+  portfolioItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const image = item.getAttribute('data-image') || '';
+      const title = item.getAttribute('data-title') || 'Untitled Project';
+      const descEl = item.querySelector('.portfolio-description-content');
+      const desc = descEl ? descEl.textContent.trim() : (item.getAttribute('data-description') || 'No description available.');
+
+
+      popupImage.src = image;
+      popupTitle.textContent = title;
+      popupDescription.textContent = desc;
+
+      popup.classList.remove('hidden');
+      popup.classList.add('visible');
     });
+  });
+
+  popupClose.addEventListener('click', () => {
+    closePopup();
+  });
+
+  popup.addEventListener('click', (e) => {
+    if (e.target === popup) {
+      closePopup();
+    }
+  });
+
+  function closePopup() {
+    popup.classList.remove('visible');
+    popup.classList.add('hidden');
+    popupImage.src = '';
+    popupTitle.textContent = '';
+    popupDescription.textContent = '';
+  }
+} else {
+  console.warn('Popup elements not found — popup functionality disabled.');
+}
+
+
+
+
   
     popupClose.addEventListener('click', () => { // sets event listener to the popups close button
       popup.classList.remove('visible'); // hides the popup by removing any styling
       popup.classList.add('hidden'); // applies CSS class hidden
+      popupImage.src = '';
+      popupTitle.textContent = '';
+      popupDescription.textContent = '';
+          
     });
   
     popup.addEventListener('click', (e) => { // sets event listener to the entire popup background
@@ -199,3 +266,4 @@ if (!isMobile) {
     }
   });
   
+

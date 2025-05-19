@@ -1460,6 +1460,31 @@ body.theme-dev .theme-toggle.dev i {
     opacity: 0.6;
     font-style: italic;
   }
+
+.theme-dev .dev-editable-content {
+  cursor: text; /* changes cursor to text beam */
+  transition: background-color 0.3s ease;
+}
+
+.theme-dev .dev-editable-content:hover {
+  background-color: #2b2b2b;
+  box-shadow: 0 0 5px #00ff90;
+}
+
+
+
+
+
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.blinking-cursor {
+  vertical-align: middle;
+}
+
+
   
   /* Terminal content area */
 
