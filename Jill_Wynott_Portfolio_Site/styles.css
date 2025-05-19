@@ -1520,6 +1520,11 @@ body.theme-dev .theme-toggle.dev i {
   opacity: 1;
 }
 
+.boot-hide {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
 
   .terminal-content {
     padding: 1rem;

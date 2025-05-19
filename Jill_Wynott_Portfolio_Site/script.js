@@ -1,3 +1,40 @@
+// Globals
+
+let bootTimeout; // global scope
+
+function showBootScreen() {
+  const boot = document.querySelector('.boot-screen');
+  boot.classList.add('boot-animate');
+  boot.style.display = 'block';
+  bootTimeout = setTimeout(() => {
+    boot.style.display = 'none';
+  }, 3000);
+}
+
+function switchTheme(theme) {
+  const boot = document.querySelector('.boot-screen');
+
+  if (boot) {
+    // Clear pending timeout
+    clearTimeout(bootTimeout);
+
+    // Stop animation
+    boot.classList.remove('boot-animate');
+
+    // Optional: animate out
+    boot.classList.add('boot-hide');
+
+    // Ensure it's gone after animation or instantly
+    setTimeout(() => {
+      boot.remove(); // or boot.style.display = 'none';
+    }, 500); // match fade duration
+  }
+
+  document.body.setAttribute('data-theme', theme);
+}
+
+    
+    
     // THEMES 
 
 document.addEventListener('DOMContentLoaded', () => {  // ensures the script runs after HTML is loaded
@@ -104,6 +141,15 @@ document.addEventListener('DOMContentLoaded', () => {  // ensures the script run
         const goingDev = themeClass === 'theme-dev'; // checks if the theme the user selected is dev theme
   
         if (wasDev && !goingDev) unwrapTerminalBoxes(); // if the user was in dev mode and picks a new theme that is not dev mode, remove terminal wrappers and restore the original content
+        // Hide the boot terminal when leaving dev theme
+          const bootTerminal = document.getElementById('boot-terminal');
+          const bootLines = document.getElementById('boot-lines');
+          if (bootTerminal) {
+            bootTerminal.classList.remove('visible');
+            bootTerminal.classList.add('hidden');
+            if (bootLines) bootLines.textContent = ''; // clear boot messages
+}
+
   
         document.body.classList.remove('theme-light', 'theme-dark', 'theme-colorful', 'theme-dev'); //ensures only one theme is active at a time
         document.body.classList.add(themeClass); // theme class is pulled from the clicked button
@@ -163,6 +209,14 @@ document.addEventListener('DOMContentLoaded', () => {  // ensures the script run
                 });
               });
             
+      function switchTheme(theme) {
+        // Hide or remove boot screen if it exists
+        const bootScreen = document.querySelector('.boot-screen');
+        if (bootScreen) bootScreen.style.display = 'none'; // or bootScreen.remove();
+
+        // Proceed with the rest of the theme switch logic
+        document.body.setAttribute('data-theme', theme);
+      }
 
 
 
