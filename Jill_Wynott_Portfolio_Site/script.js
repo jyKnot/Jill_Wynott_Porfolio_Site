@@ -43,7 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {  // ensures the script run
         const cloned = el.cloneNode(true); // makes a copy of the html element and stores it in variable cloned
         // the copy will be the one we mark up, leaving the original untouched
         cloned.setAttribute('contenteditable', 'true'); // this makes the cloned HTML editable in the browser, so the user can click inside and change its content
-       
+
+
+
         // this block creates the terminal look, adding the terminal header, red, yellow and green dots and the path 
         const terminalHeader = ` 
           <div class="terminal-header">
@@ -105,7 +107,9 @@ document.addEventListener('DOMContentLoaded', () => {  // ensures the script run
     // SCROLLYTELLING 
 
 
-    const revealElements = document.querySelectorAll('.reveal-on-scroll, .slide-in-left, .slide-in-right'); // selects all html elements that have these CSS classes
+    const revealElements = Array.from(document.querySelectorAll('.reveal-on-scroll, .slide-in-left, .slide-in-right'))
+  .filter(el => !el.closest('#portfolio-section'));
+
     const observer = new IntersectionObserver((entries) => { // observer (motion sensor) that watches elements on the page and triggers actions when they enter or exit the viewport
       entries.forEach(entry => { // loop that checks if each element is visible in the viewport
         if (entry.isIntersecting) { // boolean that becomes true when the element crosses the threshold of visibility (set to 0.15, or 15% visable)
@@ -117,6 +121,27 @@ document.addEventListener('DOMContentLoaded', () => {  // ensures the script run
     }, { threshold: 0.15 }); // threshold set to action when 15% of the element is visable on the viewport
     revealElements.forEach(el => observer.observe(el)); // assigns a 'motion sensor' to each element on the page with a reveal related class
   
+const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+if (!isMobile) {
+  const revealElements = document.querySelectorAll('.reveal-on-scroll, .slide-in-left, .slide-in-right');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+      } else {
+        entry.target.classList.remove('revealed');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  revealElements.forEach(el => observer.observe(el));
+} else {
+  // Instantly reveal all elements without animation on mobile
+  document.querySelectorAll('.reveal-on-scroll, .slide-in-left, .slide-in-right')
+    .forEach(el => el.classList.add('revealed'));
+}
+
 
 
 

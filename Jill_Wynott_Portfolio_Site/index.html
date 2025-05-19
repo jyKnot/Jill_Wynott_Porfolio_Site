@@ -45,20 +45,21 @@
 
 
     <header>
-      <nav id="theme-nav">
-        <button class="theme-toggle light" data-theme="theme-light">
-          Light
+     <nav id="theme-nav">
+        <button class="theme-toggle light" data-theme="theme-light" aria-label="Light Theme">
+        <i class="fas fa-sun"></i>
         </button>
-        <button class="theme-toggle dark" data-theme="theme-dark">Dark</button>
-        <button
-          class="theme-toggle colourful colour"
-          data-theme="theme-colorful"
-        >
-          Colour Config
+        <button class="theme-toggle dark" data-theme="theme-dark" aria-label="Dark Theme">
+        <i class="fas fa-moon"></i>
         </button>
-        <button class="theme-toggle dev" data-theme="theme-dev">
-          &lt;Dev/&gt;
+        <button class="theme-toggle colourful colour" data-theme="theme-colorful" aria-label="Colorful Theme">
+        <i class="fas fa-palette"></i>
         </button>
+        <button class="theme-toggle dev" data-theme="theme-dev" aria-label="Dev Theme">
+        <i class="fas fa-terminal"></i>
+  </button>
+</nav>
+
       </nav>
 
       <nav id="main-header-nav">
@@ -192,7 +193,7 @@
               alt="Whistler Sailing Photography"
             />
             <h3>Photography</h3>
-            <p>Capturing spirit</p>
+            <p>Visual Storyteller</p>
           </div>
 
 
@@ -250,32 +251,36 @@
 <section id="contact-section">
   <div class="chat-container">
     <div class="chat-bubble system">
-      👋 Hi there! Got a question or want to connect? Drop me a message!
+      👋 Have a question or want to chat? Reach out!
     </div>
-    <form
-      class="chat-form"
-      action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSf-f44KkVRyvBvU51pLLVjpRBYEsKmLMJzZmlUH2XQzIM2ETg/formResponse"
-      method="POST"
-      target="hidden_iframe"
-      onsubmit="submitted=true"
-    >
-      <div class="chat-bubble user-input">
-        <label for="name">Your name</label>
-        <input type="text" id="name" name="entry.953858677" required /> 
-      </div>
-      <div class="chat-bubble user-input">
-        <label for="email">Your email</label>
-        <input type="email" id="email" name="entry.620998730" required />
-      </div>
-      <div class="chat-bubble user-input">
-        <label for="message">Your message</label>
-        <textarea id="message" name="entry.661703303" rows="4" required></textarea>
-      </div>
-      <div class="chat-bubble submit-bubble">
-        <button type="submit">💬 Send Message</button>
-      </div>
-      <iframe name="hidden_iframe" style="display: none;"></iframe>
-    </form>
+   <form
+  class="contact-form"
+  action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSf-f44KkVRyvBvU51pLLVjpRBYEsKmLMJzZmlUH2XQzIM2ETg/formResponse"
+  method="POST"
+  target="hidden_iframe"
+  onsubmit="submitted=true"
+>
+  <div class="form-group">
+    <label for="name">Your Name</label>
+    <input type="text" id="name" name="entry.953858677" required />
+  </div>
+
+  <div class="form-group">
+    <label for="email">Your Email</label>
+    <input type="email" id="email" name="entry.620998730" required />
+  </div>
+
+  <div class="form-group">
+    <label for="message">Your Message</label>
+    <textarea id="message" name="entry.661703303" rows="5" required></textarea>
+  </div>
+
+  <div class="form-submit">
+    <button type="submit">Send Message</button>
+  </div>
+  <iframe name="hidden_iframe" style="display:none;"></iframe>
+</form>
+
   </div>
 </section>
 
