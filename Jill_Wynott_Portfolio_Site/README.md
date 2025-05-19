@@ -15,13 +15,19 @@ This project is designed to showcase a simple portfolio webpage with interactive
 
 ## Themes
 The project includes four distinct themes:
-- Theme 1: Light Mode
-- Theme 2: Dark Mode
-- Theme 3: Colour Config Mode
-- Theme 4: Dev Mode
+- Theme 1: Light Mode - Clean and minimal.
+- Theme 2: Dark Mode - Sleek and contrast-heavy.
+- Theme 3: Colour Config Mode - A more expressive, branded palette.
+- Theme 4: Dev Mode - A playful mode featuring interactive extras.
 
 ## Installation
 No installation is required. Simply download the project files and open `index.html` in your preferred web browser.
+
+## A Note on Scrollytelling
+This project experiments with a lightweight version of scrollytelling—a narrative format triggered by scroll behavior—to guide the user through the portfolio in a more engaging way.
+
+## Known Issues
+There is an intermittent bug where portfolio pop-ups lose their headings and content after switching in and out of Dev Mode. The issue is difficult to reproduce consistently and appears to be related to how elements are reset during theme changes.
 
 ## License
 This project is open-source and available for use and modification.
