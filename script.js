@@ -348,18 +348,18 @@ if (popup && popupImage && popupTitle && popupDescription && popupClose) {
 
   // FORM SUBMISSION
   
-  document.addEventListener('DOMContentLoaded', () => { // ensures the code runs after the HTML document has fully loaded
-    const form = document.querySelector('.chat-form'); // grabs the HTML class .chat-form and stores it in the form variable
-    const systemBubble = document.querySelector('.chat-bubble.system'); // grabs the HTML class .chat-bubble.system and stores it in the systemBubble variable
-  
-    if (form) { // checks the form was successfully found
-      form.addEventListener('submit', function (e) { // adds an event listener for the submit button is selected
-        systemBubble.textContent = "✅ Thanks for your message! I'll be in touch soon."; // shows a temporary success message
-        setTimeout(() => { // clears form fields after short delay (to allow time for Google Form submission)
-          form.reset(); // clears all fields in form and resets to default (empty)
-        }, 1000); // 1 second delay ensures form submits before resetting
-      });
-    }
-  });
-  
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('.contact-form'); // <-- fixed class name
+  const systemBubble = document.querySelector('.chat-bubble.system');
+
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      systemBubble.textContent = "✅ Thanks for your message! I'll be in touch soon.";
+      setTimeout(() => {
+        form.reset();
+      }, 1000);
+    });
+  }
+});
+
 
