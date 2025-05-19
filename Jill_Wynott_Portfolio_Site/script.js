@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {  // ensures the script run
         } else { //
           entry.target.classList.remove('revealed'); // removes the revealed class which hodes the animation
         }
-      });
+      }); 
     }, { threshold: 0.15 }); // threshold set to action when 15% of the element is visable on the viewport
     revealElements.forEach(el => observer.observe(el)); // assigns a 'motion sensor' to each element on the page with a reveal related class
   
