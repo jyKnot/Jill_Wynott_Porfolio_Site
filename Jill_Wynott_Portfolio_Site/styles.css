@@ -242,15 +242,31 @@
   }
 
 @media (max-width: 768px) {
-  #main-header-nav {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    left: auto;
-    width: auto;
-    background: rgba(255, 255, 255, 0.1); /* optional */
-    z-index: 1000;
-  }
+#main-header-nav a {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+#main-header-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+#main-header-nav a:hover::after {
+  transform: scaleX(1.2);
+}
+
 
   #main-header-nav ul {
     flex-direction: column;
@@ -269,9 +285,58 @@
   }
 }
 
-  
+/* Light Theme */
+.theme-light #main-header-nav a:hover {
+  color: darkgray;
+}
+
+/* Dark Theme */
+.theme-dark #main-header-nav a:hover {
+  color: darkgray;
+}
+
+/* Colorful Theme */
+.theme-colorful #main-header-nav a:hover {
+  color: #ffffff;
+}
+
+/* Dev Theme */
+.theme-dev #main-header-nav a:hover {
+  color: #00ff90;
+}
+
+
 
    /* Responsive Stack on Mobile */
+
+@media (max-width: 768px) {
+  #story-section {
+    padding-top: 3rem;
+    padding-bottom: 6rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .story-container {
+    padding: 0 !important;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+
+
+   @media (max-width: 768px) {
+  #intro-section {
+    padding-top: 3rem;
+    padding-bottom: 6rem;
+  }
+}
 
    @media (max-width: 768px) {
   h1 {
@@ -807,6 +872,15 @@ body.theme-dev .theme-toggle.dev i {
     color: #009290;
   }
 
+  .theme-colorful #theme-nav i {
+  color: #009290 /* Example: warm yellow, but you can pick your own */
+}
+
+.theme-colorful #theme-nav button:hover i {
+  opacity: 1;
+  color: #ffffff; /* Orange on hover, or choose a bright accent */
+}
+
 
 
     /* INTRO SECTION */
@@ -814,8 +888,8 @@ body.theme-dev .theme-toggle.dev i {
 
 #intro-section {
     padding: 2rem;
-    padding-top: 9rem;
-    padding-bottom: 20rem; /* *Adds scroll space before next section* */
+    padding-top: 5rem;
+    padding-bottom: 25rem; /* *Adds scroll space before next section* */
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -854,13 +928,16 @@ body.theme-dev .theme-toggle.dev i {
     /* STORY SECTION */
 
 #story-section {
-    padding: 4rem 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-  }
+  padding: 2rem;
+  padding-top: 5rem;
+  padding-bottom: 25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
   
   .story-container {
-    padding: 2rem;
+    padding: 10rem;
     border-radius: 12px;
 
   }
@@ -886,6 +963,7 @@ body.theme-dev .theme-toggle.dev i {
 #portfolio-section {
     padding: 4rem 2rem;
     padding-top: 10rem; /* reminder to keep same spacing throughout page */
+    padding-bottom: 20rem;
     max-width: 1100px;
     margin: 0 auto;
   }
