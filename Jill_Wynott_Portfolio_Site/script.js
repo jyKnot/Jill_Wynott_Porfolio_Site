@@ -33,7 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {  // ensures the script run
       const elements = document.querySelectorAll('h1, h2, h3, h4, p'); // elements to turn into the terminal
       elements.forEach(el => { //starts a loop for each mathcing element, the following code will run
         // Don't touch anything inside portfolio-item (important!)
-        if (el.closest('.portfolio-item') || el.closest('.inline-terminal')) return; // if this element is part of a portfolio item, then skip it. 
+          if (
+            el.closest('.portfolio-item') || 
+            el.closest('.inline-terminal') || 
+            el.closest('.portfolio-popup')
+          ) return;
         // if this item has already been turned into a stylized terminal, then skip it
         // || = if either of these conditions are true
     
@@ -114,15 +118,50 @@ document.addEventListener('DOMContentLoaded', () => {  // ensures the script run
           introImage.src = './assets/headshot-image-dev.png';
           updateDevTagLabels(); // calls function to add data-tag attribute to all headings and paragraphs
           wrapContentInTerminalBoxes(); // calls function to activate terminal styling
-          document.querySelector('.intro-text h1').textContent = "Hi, I'm @yKnot. ";
+  
+          // Terminal boot animation
+          const bootTerminal = document.getElementById('boot-terminal');
+          const bootLines = document.getElementById('boot-lines');
+          bootTerminal.classList.remove('hidden');
+          bootTerminal.classList.add('visible');
 
-        }
-  
-        toggleDevTerminalVisibility(); // checks if theme dev is active, and if so shows the dev terminal
-        toggleDinoGameVisibility(); // checks if theem dev is active, and if so displays the dino game
-      });
-    });
-  
+        const messages = [
+              "[OK] Booting Developer Theme...",
+              "[OK] Checking system integrity...",
+              "[OK] Loading terminal interface...",
+              "[OK] Applying dark shell styling...",
+              "[OK] Injecting creativity...",
+              "[OK] Initializing portfolio modules...",
+              "[OK] Connecting to GitHub...",
+              "[OK] Verifying projects...",
+              "[OK] Compiling UI assets...",
+              "[OK] Launch successful 🚀",
+              "Welcome, @yKnot"
+            ];
+
+          let idx = 0;
+          function typeBootLine() {
+            if (idx < messages.length) {
+              bootLines.textContent += messages[idx] + "\n";
+              idx++;
+              setTimeout(typeBootLine, 800);
+            } else {
+              setTimeout(() => {
+                bootTerminal.classList.remove('visible');
+                bootTerminal.classList.add('hidden');
+              }, 3000); // fade out after full message
+            }
+          }
+          typeBootLine();
+
+
+                  }
+            
+                  toggleDevTerminalVisibility(); // checks if theme dev is active, and if so shows the dev terminal
+                  toggleDinoGameVisibility(); // checks if theem dev is active, and if so displays the dino game
+                });
+              });
+            
 
 
 
