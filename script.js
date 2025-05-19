@@ -1,4 +1,4 @@
-// Globals
+// GLOBALS
 
 let bootTimeout; // global scope
 
@@ -34,7 +34,7 @@ function switchTheme(theme) {
 }
 
     
-    
+  
     // THEMES 
 
 document.addEventListener('DOMContentLoaded', () => {  // ensures the script runs after HTML is loaded
@@ -348,18 +348,16 @@ if (popup && popupImage && popupTitle && popupDescription && popupClose) {
 
   // FORM SUBMISSION
   
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.querySelector('.contact-form'); // <-- fixed class name
-  const systemBubble = document.querySelector('.chat-bubble.system');
+const form = document.querySelector('.contact-form');
+const systemBubble = document.querySelector('.chat-bubble.system');
 
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      systemBubble.textContent = "✅ Thanks for your message! I'll be in touch soon.";
-      setTimeout(() => {
-        form.reset();
-      }, 1000);
-    });
-  }
-});
+if (form) {
+  form.addEventListener('submit', function (e) {
+    systemBubble.textContent = "✅ Thanks for your message! I'll be in touch soon.";
+    setTimeout(() => {
+      form.reset();
+    }, 1000);
+  });
+}
 
 
