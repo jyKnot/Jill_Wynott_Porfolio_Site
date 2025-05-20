@@ -1,34 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jill Wynott</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jill Wynott</title>
 
-    <!-- Google tag (gtag.js) -->
-     
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78W6F8J655"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-78W6F8J655');
-    </script>
+  <!-- Google Fonts -->
 
-<script src="script.js" defer></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Questrial&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-/></head>
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Custom Styles -->
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Google Analytics -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-78W6F8J655"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-78W6F8J655');
+  </script>
+
+  <!-- Microsoft Clarity -->
+
+  <script type="text/javascript">
+    (function(c, l, a, r, i, t, y) {
+      c[a] = c[a] || function() { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "rmk4tohqno");
+  </script>
+
+  <!-- Custom Script -->
+
+  <script src="script.js" defer></script>
+</head>
+
 
 
 
   <body>
+
+    <!-- booting -->
 
     <div id="boot-terminal" class="terminal-boot hidden">
     <pre id="boot-lines"></pre>
@@ -65,19 +84,19 @@
 
     <header>
      <nav id="theme-nav">
+       <button class="theme-toggle dark" data-theme="theme-dark" aria-label="Dark Theme">
+        <i class="fas fa-moon"></i>
+        </button>
         <button class="theme-toggle light" data-theme="theme-light" aria-label="Light Theme">
         <i class="fas fa-sun"></i>
-        </button>
-        <button class="theme-toggle dark" data-theme="theme-dark" aria-label="Dark Theme">
-        <i class="fas fa-moon"></i>
         </button>
         <button class="theme-toggle colourful colour" data-theme="theme-colorful" aria-label="Colorful Theme">
         <i class="fas fa-palette"></i>
         </button>
         <button class="theme-toggle dev" data-theme="theme-dev" aria-label="Dev Theme">
         <i class="fas fa-terminal"></i>
-  </button>
-</nav>
+      </button>
+    </nav>
 
       </nav>
 
@@ -143,8 +162,8 @@
 
 
       <section id="portfolio-section">
-        <div class="portfolio-container slide-in-right">
-         <h2>See some of my latest work</h2><br><br>
+        <div class="portfolio-container">
+         <h2>Explore My Recent Projects</h2><br><br>
           <div class="portfolio-grid">
 
 
@@ -152,13 +171,13 @@
 
             <div
               class="portfolio-item"
-              data-title="Whistler Sailing"
+              data-title="Website Administration & Oversight"
               data-image="./assets/WSA_Full_Mockup_web.jpg"
               data-description="I oversee the complete web management for Whistler Sailing, including content updates, page structure, and visual consistency. My role ensures the site delivers clear, timely communication of programs, events, and announcements, while maintaining an intuitive and engaging user experience for all visitors."
             >
               <img
-                src="./assets/WSA_Full_Mockup_web.jpg" alt="Whistler Sailing"/>
-              <h3>Whistler Sailing</h3>
+                src="./assets/WSA_Full_Mockup_web.jpg" alt="Whistler Sailing Web Management"/>
+              <h3>Website Administration & Oversight</h3>
               <p>Managing the Whistler Sailing website to keep programs, events, and news up-to-date and user-friendly.</p>
             </div>
 
@@ -176,8 +195,8 @@
                 src="./assets/Corporate_Plan_Mockup_Web.png"
                 alt="Corporate Plan"
               />
-              <h3>Corporate Plan & Annual Report Design</h3>
-              <p>Designing impactful municipal reports that balance strategic clarity with engaging visual storytelling.</p>
+              <h3>Corporate Communications Design</h3>
+              <p>Designing impactful reports that balance strategic clarity with engaging visual storytelling.</p>
             </div>
 
 
@@ -193,7 +212,7 @@
                 src="./assets/Strategic_Plan_Mockup_web.jpg"
                 alt="Strategic Plan"
               />
-              <h3>Strategic Plan & Council Priorities</h3>
+              <h3>Data Visualization Design</h3>
               <p>Translating Council's vision into a clear, accessible strategic roadmap for the community.</p>
             </div>
 
@@ -209,9 +228,9 @@
           >
             <img
               src="./assets/Photography_mockup_web.png"
-              alt="Whistler Sailing Photography"
+              alt="Photography"
             />
-            <h3>Photography</h3>
+            <h3>Visual Storytelling</h3>
             <p>Capturing the energy of Whistler Sailing through compelling, community-focused imagery.</p>
           </div>
 
@@ -223,14 +242,12 @@
           data-title="Template Creation"
           data-image="./assets/pptx_Template_Mockup.png"
           data-description="I design and maintain the official PowerPoint template (.potx) for the Resort Municipality of Whistler—a vital communication tool used organization-wide. By refreshing the design seasonally, I keep the template visually engaging while maintaining strict brand alignment. Each version is built with flexibility in mind, balancing aesthetic appeal and practical usability to support a wide range of presentation needs across departments."
-
-"
         >
           <img
             src="./assets/pptx_Template_Mockup.png"
             alt="Template creation"
           />
-          <h3>Template Creation</h3>
+          <h3>Custom Templates</h3>
           <p>Designing adaptable PowerPoint templates that elevate presentations while staying true to RMOW’s brand.</p>
         </div>
 
@@ -240,21 +257,22 @@
 
         <div
         class="portfolio-item"
-        data-title="Print Materials"
+        data-title="Marketing Materials"
         data-image="./assets/Brochure_MockUp.png"
         data-description="I design a variety of print materials—including posters, rack cards, and brochures—for public programs and events. Each piece is crafted with bold visuals, clear messaging, and strong layout hierarchy to capture attention and convey key information quickly. My goal is to ensure accessibility and engagement across diverse audiences, while maintaining brand consistency and visual appeal."
       >
         <img
           src="./assets/Brochure_MockUp.png"
-          alt="Whistler Sailing"
+          alt="Marketing Materials"
         />
-        <h3>Print Materials</h3>
+        <h3>Marketing Materials</h3>
         <p>Creating impactful print designs that inform, attract, and resonate with a wide audience.</p>
       </div>
 
 
 
       <!-- <INSERT MORE PROJECTS HERE> -->
+
 
           </div>
         </div>
@@ -267,7 +285,8 @@
       
     <!-- CONTACT SECTION -->
 
-    <!-- linked form to a google form for submission simplicity -->
+    <!-- Google Form Attachment -->
+
 
 <section id="contact-section">
   <div class="chat-container">
@@ -306,8 +325,7 @@
 </section>
 
 
-
-    </main>
+</main>
 
  
 
