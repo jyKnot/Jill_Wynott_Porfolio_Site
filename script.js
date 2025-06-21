@@ -269,6 +269,8 @@ if (!isMobile) {
 
 
 
+
+
 // PORTFOLIO POPUP 
 
 
@@ -287,12 +289,12 @@ if (popup && popupImage && popupTitle && popupDescription && popupClose) {
       const image = item.getAttribute('data-image') || '';
       const title = item.getAttribute('data-title') || 'Untitled Project';
       const descEl = item.querySelector('.portfolio-description-content');
-      const desc = descEl ? descEl.textContent.trim() : (item.getAttribute('data-description') || 'No description available.');
+      const desc = descEl ? descEl.innerHTML.trim() : (item.getAttribute('data-description') || 'No description available.');
 
 
       popupImage.src = image;
       popupTitle.textContent = title;
-      popupDescription.textContent = desc;
+      popupDescription.innerHTML = desc;
 
       popup.classList.remove('hidden');
       popup.classList.add('visible');

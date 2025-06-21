@@ -1,123 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jill Wynott</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jill Wynott</title>
 
-  <!-- Google Fonts -->
+    <!-- Google Fonts -->
 
-  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Questrial&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Font Awesome Icons -->
+    <!-- Font Awesome Icons -->
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
-  <!-- Custom Styles -->
+    <!-- Custom Styles -->
 
-  <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
 
-  <!-- Google Analytics -->
+    <!-- Google Analytics -->
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-78W6F8J655"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-78W6F8J655');
-  </script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-78W6F8J655"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-78W6F8J655");
+    </script>
 
-  <!-- Microsoft Clarity -->
+    <!-- Microsoft Clarity -->
 
-  <script type="text/javascript">
-    (function(c, l, a, r, i, t, y) {
-      c[a] = c[a] || function() { (c[a].q = c[a].q || []).push(arguments) };
-      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-    })(window, document, "clarity", "script", "rmk4tohqno");
-  </script>
+    <script type="text/javascript">
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "rmk4tohqno");
+    </script>
 
-  <!-- Custom Script -->
+    <!-- Custom Script -->
 
-  <script src="script.js" defer></script>
-
-</head>
-
-
-
+    <script src="script.js" defer></script>
+  </head>
 
   <body>
-
     <!-- booting -->
 
     <div id="boot-terminal" class="terminal-boot hidden">
-    <pre id="boot-lines"></pre>
+      <pre id="boot-lines"></pre>
     </div>
-
-
-
-    <!-- PORTFOLIO POPUP -->
-
-
-    <div class="portfolio-popup hidden" id="portfolioPopup">
-      <div class="popup-content">
-        <span class="popup-close" id="popupClose">&times;</span>
-        <img src="" alt="Project Image" id="popupImage"/> 
-        <!-- leaving img src empty on purpose, as image is pulled from individual portfolio items (flagged by online HTML validator freeformat.com) -->
-        <h3 id="popupTitle">Project Title</h3>
-        <p id="popupDescription">More detailed description here.</p>
-      </div>
-    </div>
-
 
 
     <!-- THEME NAVIGATION -->
 
-
     <header>
-     <nav id="theme-nav">
-       <button class="theme-toggle dark" data-theme="theme-dark" aria-label="Dark Theme">
-        <i class="fas fa-moon"></i>
+      <nav id="theme-nav">
+        <button
+          class="theme-toggle dark"
+          data-theme="theme-dark"
+          aria-label="Dark Theme"
+        >
+          <i class="fas fa-moon"></i>
         </button>
-        <button class="theme-toggle light" data-theme="theme-light" aria-label="Light Theme">
-        <i class="fas fa-sun"></i>
+        <button
+          class="theme-toggle light"
+          data-theme="theme-light"
+          aria-label="Light Theme"
+        >
+          <i class="fas fa-sun"></i>
         </button>
-        <button class="theme-toggle colourful colour" data-theme="theme-colorful" aria-label="Colorful Theme">
-        <i class="fas fa-palette"></i>
+        <button
+          class="theme-toggle colourful colour"
+          data-theme="theme-colorful"
+          aria-label="Colorful Theme"
+        >
+          <i class="fas fa-palette"></i>
         </button>
-        <button class="theme-toggle dev" data-theme="theme-dev" aria-label="Dev Theme">
-        <i class="fas fa-terminal"></i>
-      </button>
-    </nav>
-
-
-    <!-- MAIN NAVIGATION -->
-
+        <button
+          class="theme-toggle dev"
+          data-theme="theme-dev"
+          aria-label="Dev Theme"
+        >
+          <i class="fas fa-terminal"></i>
+        </button>
       </nav>
+
+      <!-- MAIN NAVIGATION -->
+
       <nav id="main-header-nav">
         <ul>
-          <li><a href="/portfolio.html">PORTFOLIO</a></li>
-          <li><a href="#contact-section">CONTACT</a></li>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/portfolio.html">Portfolio</a></li>
+          <li><a href="/about.html">About Me</a></li>
         </ul>
       </nav>
     </header>
 
     <!-- SOCIAL NAVIGATION -->
 
-  <div class="social-fixed">
-  <a href="https://www.linkedin.com/in/jillwynott/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-  <a href="https://github.com/jyknot" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-  <a href="mailto:jillwynott@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-  <a href="https://discord.com/users/yknot_52788" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
-  </div>
-
-
+    <div class="social-fixed">
+      <a
+        href="https://www.linkedin.com/in/jillwynott/"
+        target="_blank"
+        aria-label="LinkedIn"
+        ><i class="fab fa-linkedin"></i
+      ></a>
+      <a href="https://github.com/jyknot" target="_blank" aria-label="GitHub"
+        ><i class="fab fa-github"></i
+      ></a>
+      <a href="mailto:jillwynott@gmail.com" aria-label="Email"
+        ><i class="fas fa-envelope"></i
+      ></a>
+      <a
+        href="https://discord.com/users/yknot_52788"
+        target="_blank"
+        aria-label="Discord"
+        ><i class="fab fa-discord"></i
+      ></a>
+    </div>
 
     <main>
-
-
       <!-- INTRO SECTION -->
-
 
       <section id="intro-section" class="reveal-on-scroll">
         <div class="intro-container">
@@ -134,212 +154,103 @@
         </div>
       </section>
 
-
-
       <!-- DINO GAME (dev mode) -->
-
 
       <div class="game-container">
         <h1>Dino Game Arcade</h1>
         <iframe src="https://wayou.github.io/t-rex-runner/"></iframe>
       </div>
-   
-
-
 
       <!-- SCROLLYTELLING STORY SECTION -->
-
 
       <section id="story-section">
         <div class="story-container slide-in-right">
           <p>
-            I'm a lifelong learner passionate about using tech and design to bring people together through thoughtful and impactful digital experiences.
+            I'm a lifelong learner passionate about using tech and design to
+            bring people together through thoughtful and impactful digital
+            experiences.
           </p>
         </div>
       </section>
 
+        <!-- PORTFOLIO SHOWCASE SECTION -->
 
+      <section id="portfolio-showcase">
+        <div class="portfolio-showcase-container">
+          <h2>Showcase Title</h2>
+          <br /><br />
+          <div class="portfolio-showcase-grid">
 
-
-      <!-- PORTFOLIO SECTION -->
-
-
-      <section id="portfolio-section">
-        <div class="portfolio-container">
-         <h2>Explore My Recent Projects</h2><br><br>
-          <div class="portfolio-grid">
-
-
-            <!-- Portfolio item 1 -->
+            <!-- Portfolio Showcase Item -->
 
             <div
               class="portfolio-item"
-              data-title="Website Administration & Oversight"
+              data-title="Showcase of my work"
               data-image="./assets/WSA_Full_Mockup_web.jpg"
-              data-description="I oversee the complete web management for Whistler Sailing, including content updates, page structure, and visual consistency. My role ensures the site delivers clear, timely communication of programs, events, and announcements, while maintaining an intuitive and engaging user experience for all visitors."
+              data-description="This showcases some of my work items"
             >
               <img
-                src="./assets/WSA_Full_Mockup_web.jpg" alt="Whistler Sailing Web Management"/>
-              <h3>Website Administration & Oversight</h3>
-              <p>Managing the Whistler Sailing website to keep programs, events, and news up-to-date and user-friendly.</p>
-            </div>
-
-
-              <!-- Portfolio item 2 -->
-
-            <div
-              class="portfolio-item"
-              data-title="Corporate Plan & Annual Report"
-              data-image="./assets/Corporate_Plan_Mockup_Web.png"
-              data-description="
-             As Lead Designer for the Resort Municipality of Whistler’s Corporate Plan and Annual Report, I create visually cohesive layouts that align with strategic goals and municipal branding. I focus on clarity, accessibility, and visual engagement, transforming complex data into digestible content that communicates effectively with the broader community."
-            >
-              <img
-                src="./assets/Corporate_Plan_Mockup_Web.png"
-                alt="Corporate Plan"
+                src="./assets/WSA_Full_Mockup_web.jpg"
+                alt="Whistler Sailing Web Management"
               />
-              <h3>Corporate Communications Design</h3>
-              <p>Designing impactful reports that balance strategic clarity with engaging visual storytelling.</p>
+              <h3>Insert something here</h3>
+              <p>
+                Insert something here. 
+              </p>
             </div>
-
-
-              <!-- Portfolio item 3 -->
-
-            <div
-              class="portfolio-item"
-              data-title="Strategic Plan & Council Priorities"
-              data-image="./assets/Strategic_Plan_Mockup_web.jpg"
-              data-description="As Lead Designer, I developed the layout and visuals for the Resort Municipality of Whistler's Strategic Plan - an essential document that outlines Council's priorities and the municipality's long-term approach. My design simplifies complex policy and planning information into an accessible, reader-friendly format, helping ensure community understanding and engagement with key goals and initiatives."
-            >
-              <img
-                src="./assets/Strategic_Plan_Mockup_web.jpg"
-                alt="Strategic Plan"
-              />
-              <h3>Data Visualization Design</h3>
-              <p>Translating Council's vision into a clear, accessible strategic roadmap for the community.</p>
-            </div>
-
-
-
-          <!-- Portfolio item 4 -->
-
-            <div
-            class="portfolio-item"
-            data-title="Photography"
-            data-image="./assets/Photography_mockup_web.png"
-            data-description="As Whistler Sailing's official photographer, I document the vibrancy of our sailing events and everyday moments on the water. My photography highlights the emotion, action, and natural beauty of the sport, bringing the experience to life for both participants and the wider community. These images strengthen engagement across digital platforms and promotional materials, helping build a deeper connection with our audience."
-          >
-            <img
-              src="./assets/Photography_mockup_web.png"
-              alt="Photography"
-            />
-            <h3>Visual Storytelling</h3>
-            <p>Capturing the energy of Whistler Sailing through compelling, community-focused imagery.</p>
-          </div>
-
-
-          <!-- Portfolio item 5 -->
-
-          <div
-          class="portfolio-item"
-          data-title="Template Creation"
-          data-image="./assets/pptx_Template_Mockup.png"
-          data-description="I design and maintain the official PowerPoint template (.potx) for the Resort Municipality of Whistler—a vital communication tool used organization-wide. By refreshing the design seasonally, I keep the template visually engaging while maintaining strict brand alignment. Each version is built with flexibility in mind, balancing aesthetic appeal and practical usability to support a wide range of presentation needs across departments."
-        >
-          <img
-            src="./assets/pptx_Template_Mockup.png"
-            alt="Template creation"
-          />
-          <h3>Custom Templates</h3>
-          <p>Designing adaptable PowerPoint templates that elevate presentations while staying true to RMOW’s brand.</p>
-        </div>
-
-
-        <!-- Portfolio item 6 -->
-
-
-        <div
-        class="portfolio-item"
-        data-title="Marketing Materials"
-        data-image="./assets/Brochure_MockUp.png"
-        data-description="I design a variety of print materials—including posters, rack cards, and brochures—for public programs and events. Each piece is crafted with bold visuals, clear messaging, and strong layout hierarchy to capture attention and convey key information quickly. My goal is to ensure accessibility and engagement across diverse audiences, while maintaining brand consistency and visual appeal."
-      >
-        <img
-          src="./assets/Brochure_MockUp.png"
-          alt="Marketing Materials"
-        />
-        <h3>Marketing Materials</h3>
-        <p>Creating impactful print designs that inform, attract, and resonate with a wide audience.</p>
-      </div>
-
-
-
-      <!-- <INSERT MORE PROJECTS HERE> -->
-
-
-          </div>
-        </div>
-      </section>
-
-
-
+            <section>
 
     
-      
-    <!-- CONTACT SECTION -->
 
-    <!-- Google Form Attachment -->
+      <!-- CONTACT SECTION -->
 
+      <!-- Google Form Attachment -->
 
-<section id="contact-section">
-  <div class="chat-container">
-    <div class="chat-bubble system">
-      👋 Have a question or want to chat? Reach out!
-    </div>
-   <form
-  class="contact-form"
-  action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSf-f44KkVRyvBvU51pLLVjpRBYEsKmLMJzZmlUH2XQzIM2ETg/formResponse"
-  method="POST"
-  target="hidden_iframe"
-  onsubmit="submitted=true"
->
-  <div class="form-group">
-    <label for="name">Your Name</label>
-    <input type="text" id="name" name="entry.953858677" required />
-  </div>
+      <section id="contact-section">
+        <div class="chat-container">
+          <div class="chat-bubble system">
+            👋 Have a question or want to chat? Reach out!
+          </div>
+          <form
+            class="contact-form"
+            action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSf-f44KkVRyvBvU51pLLVjpRBYEsKmLMJzZmlUH2XQzIM2ETg/formResponse"
+            method="POST"
+            target="hidden_iframe"
+            onsubmit="submitted=true"
+          >
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="entry.953858677" required />
+            </div>
 
-  <div class="form-group">
-    <label for="email">Your Email</label>
-    <input type="email" id="email" name="entry.620998730" required />
-  </div>
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="entry.620998730" required />
+            </div>
 
-  <div class="form-group">
-    <label for="message">Your Message</label>
-    <textarea id="message" name="entry.661703303" rows="5" required></textarea>
-  </div>
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea
+                id="message"
+                name="entry.661703303"
+                rows="5"
+                required
+              ></textarea>
+            </div>
 
-  <div class="form-submit">
-    <button type="submit">Send Message</button>
-  </div>
-  <iframe name="hidden_iframe" style="display:none;"></iframe>
-</form>
+            <div class="form-submit">
+              <button type="submit">Send Message</button>
+            </div>
+            <iframe name="hidden_iframe" style="display: none"></iframe>
+          </form>
+        </div>
+      </section>
+    </main>
 
-  </div>
-</section>
+    <!-- FOOTER SECTION -->
 
-
-</main>
-
- 
-
-
-
-<!-- FOOTER SECTION -->
-
-
-<footer class="footer">
-  <p>&copy; 2025 by Jill Wynott. All rights reserved.</p>
-</footer>
-</body>
+    <footer class="footer">
+      <p>&copy; 2025 by Jill Wynott. All rights reserved.</p>
+    </footer>
+  </body>
 </html>
-
