@@ -861,7 +861,7 @@ body.theme-dev .theme-toggle.dev i {
   
   .theme-colorful {
     background-color: #333b50;
-    color: #ffffff;
+    color: #ffffffdd
   }
 
   .theme-light .portfolio-item {
@@ -979,6 +979,7 @@ body.theme-dev .theme-toggle.dev i {
     .portfolio-showcase-container {
     text-align: center;
     justify-content: center;
+    padding-bottom: 15rem;
   }
 
   
