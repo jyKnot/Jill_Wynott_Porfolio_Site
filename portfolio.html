@@ -1,230 +1,454 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jill Wynott</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jill Wynott</title>
 
-  <!-- Google Fonts -->
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Questrial&display=swap"
+      rel="stylesheet"
+    />
 
-  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
-  <!-- Font Awesome Icons -->
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-78W6F8J655"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-78W6F8J655");
+    </script>
 
-  <!-- Custom Styles -->
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "rmk4tohqno");
+    </script>
 
-  <link rel="stylesheet" href="styles.css" />
+    <!-- Custom Script -->
+    <script src="script.js" defer></script>
 
-  <!-- Google Analytics -->
+    <!-- This removes the white flash - so browser can style the page before it begins rendering -->
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-78W6F8J655"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-78W6F8J655');
-  </script>
-
-  <!-- Microsoft Clarity -->
-
-  <script type="text/javascript">
-    (function(c, l, a, r, i, t, y) {
-      c[a] = c[a] || function() { (c[a].q = c[a].q || []).push(arguments) };
-      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-    })(window, document, "clarity", "script", "rmk4tohqno");
-  </script>
-
-  <!-- Custom Script -->
-
-  <script src="script.js" defer></script>
-  
-</head>
-<body>
-
-
-<!-- Navigations -->
-
-       <!-- MAIN NAVIGATION -->
-
-
-      <nav id="main-header-nav">
-        <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
-          <li><a href="/about.html">About Me</a></li>
-        </ul>
-      </nav>
-
-
-    </header>
-
-      <!-- THEME NAVIGATION -->
-
-    <header>
-     <nav id="theme-nav">
-       <button class="theme-toggle dark" data-theme="theme-dark" aria-label="Dark Theme">
-        <i class="fas fa-moon"></i>
-        </button>
-        <button class="theme-toggle light" data-theme="theme-light" aria-label="Light Theme">
-        <i class="fas fa-sun"></i>
-        </button>
-        <button class="theme-toggle colourful colour" data-theme="theme-colorful" aria-label="Colorful Theme">
-        <i class="fas fa-palette"></i>
-        </button>
-        <button class="theme-toggle dev" data-theme="theme-dev" aria-label="Dev Theme">
-        <i class="fas fa-terminal"></i>
-      </button>
+    <script>
+      (function () {
+        const theme = localStorage.getItem("selectedTheme");
+        if (theme) {
+          document.documentElement.className = theme;
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- Navigations -->
+    <!-- MAIN NAVIGATION -->
+    <nav id="main-header-nav">
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/portfolio.html">Portfolio</a></li>
+        <li><a href="/about.html">About Me</a></li>
+      </ul>
     </nav>
 
-    <!-- SOCIAL NAVIGATION -->
+    <!-- THEME NAVIGATION -->
+    <header>
+      <nav id="theme-nav">
+        <button
+          class="theme-toggle dark"
+          data-theme="theme-dark"
+          aria-label="Dark Theme"
+        >
+          <i class="fas fa-moon"></i>
+        </button>
+        <button
+          class="theme-toggle light"
+          data-theme="theme-light"
+          aria-label="Light Theme"
+        >
+          <i class="fas fa-sun"></i>
+        </button>
+        <button
+          class="theme-toggle colourful colour"
+          data-theme="theme-colorful"
+          aria-label="Colorful Theme"
+        >
+          <i class="fas fa-palette"></i>
+        </button>
+        <button
+          class="theme-toggle dev"
+          data-theme="theme-dev"
+          aria-label="Dev Theme"
+        >
+          <i class="fas fa-terminal"></i>
+        </button>
+      </nav>
 
-    <div class="social-fixed">
-    <a href="https://www.linkedin.com/in/jillwynott/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/jyknot" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-    <a href="mailto:jillwynott@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-    <a href="https://discord.com/users/yknot_52788" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
-    </div>
-  
-    
-<main>
-
-
-    <!-- PORTFOLIO POPUP -->
-
-    <div class="portfolio-popup hidden" id="portfolioPopup">
-      <div class="popup-content">
-        <span class="popup-close" id="popupClose">&times;</span>
-        <img src="" alt="Project Image" id="popupImage" />
-        <!-- leaving img src empty on purpose, as image is pulled from individual portfolio items (flagged by online HTML validator freeformat.com) -->
-        <h3 id="popupTitle">Project Title</h3>
-        <p id="popupDescription">More detailed description here.</p>
+      <!-- SOCIAL NAVIGATION -->
+      <div class="social-fixed">
+        <a
+          href="https://www.linkedin.com/in/jillwynott/"
+          target="_blank"
+          aria-label="LinkedIn"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a href="https://github.com/jyknot" target="_blank" aria-label="GitHub"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a href="mailto:jillwynott@gmail.com" aria-label="Email"
+          ><i class="fas fa-envelope"></i
+        ></a>
+        <a
+          href="https://discord.com/users/yknot_52788"
+          target="_blank"
+          aria-label="Discord"
+          ><i class="fab fa-discord"></i
+        ></a>
       </div>
-    </div>
+    </header>
+
+    <main>
+      <!-- PORTFOLIO POPUP -->
+      <div class="portfolio-popup hidden" id="portfolioPopup">
+        <div class="popup-content">
+          <span class="popup-close" id="popupClose">&times;</span>
+          <img src="" alt="Project Image" id="popupImage" />
+          <!-- leaving img src empty on purpose, as image is pulled from individual portfolio items (flagged by online HTML validator freeformat.com) -->
+          <h3 id="popupTitle">Project Title</h3>
+          <p id="popupDescription">More detailed description here.</p>
+        </div>
+      </div>
 
       <!-- PORTFOLIO SECTION -->
-
       <section id="portfolio-section">
         <div class="portfolio-container">
           <h2>Creative Highlights</h2>
-          <br /><br />
           <div class="portfolio-grid">
-            <!-- Portfolio item 1 -->
-
+            <!-- Portfolio item 1 - WSA Website -->
             <div
               class="portfolio-item"
               data-title="Whistler Sailing Website: A Story of Resilience and Strategic Recovery"
               data-image="./assets/WSA_Full_Mockup_web.jpg"
-              >
+            >
               <img
                 src="./assets/WSA_Full_Mockup_web.jpg"
                 alt="Whistler Sailing Web Management"
               />
               <div class="portfolio-description-content hidden">
-                <p> In 2022, the Whistler Sailing Association launched an exciting two-phase initiative to modernize its digital presence. With a hired contractor, the first goal was to deliver a clean website that would serve as a reliable hub for program information, events, and membership details. The second was more ambitious: to integrate a customized online booking system that would simplify registration and reduce administrative workload. While Phase 1 was completed successfully, Phase 2 marked a dramatic shift. <p>
-                <p>The booking system—intended to streamline operations—quickly began to unravel. Despite early optimism, the developer failed to deliver a usable product. As bugs, gaps, and inefficiencies mounted, the project consumed its budget and strained internal capacity. Families grew frustrated with registration and payment issues, while staff were pulled into hours of manual troubleshooting. The very tool meant to strengthen the organization had instead become its greatest liability.</p>
-                <p>Confronted with a system in collapse, I stepped in to take decisive action. After reviewing the technical, financial, and operational implications, I made the call to halt development entirely. Rather than continue investing in an unstable product, I led a strategic pivot: rebuilding the site from the ground up and rethinking the solution with clarity and focus.</p>
-                <p>I delivered a new site using WIX, one which gave the organization digital independence, and implemented Checkfront, a robust, user-friendly third-party booking platform that aligned with the real operational needs. The system allowed for quick rollout of features including lesson registration, membership payments, and boat rentals without the ongoing costs and risks of custom development. It was intuitive for staff, reliable for users, and sustainable for the organization.</p>
-                <p>The outcome was immediate and measurable: registrations became frictionless, administrative workload dropped significantly, and user satisfaction rose. The community responded with positive feedback, and the internal team regained confidence in managing digital tools. What began as a derailed project became a compelling example of adaptive leadership and strategic recovery.</p>
-                <p>This experience reinforced several lasting lessons for me:</p>
+                <p>
+                  In 2022, the Whistler Sailing Association launched an exciting
+                  two-phase initiative to modernize its digital presence. With a
+                  hired contractor, the first goal was to deliver a clean
+                  website that would serve as a reliable hub for program
+                  information, events, and membership details. The second was
+                  more ambitious: to integrate a customized online booking
+                  system that would simplify registration and reduce
+                  administrative workload. While Phase 1 was completed
+                  successfully, Phase 2 marked a dramatic shift.
+                </p>
+                <p>
+                  The booking system—intended to streamline operations—quickly
+                  began to unravel. Despite early optimism, the developer failed
+                  to deliver a usable product. As bugs, gaps, and inefficiencies
+                  mounted, the project consumed its budget and strained internal
+                  capacity. Families grew frustrated with registration and
+                  payment issues, while staff were pulled into hours of manual
+                  troubleshooting. The very tool meant to strengthen the
+                  organization had instead become its greatest liability.
+                </p>
+                <p>
+                  Confronted with a system in collapse, I stepped in to take
+                  decisive action. After reviewing the technical, financial, and
+                  operational implications, I made the call to halt development
+                  entirely. Rather than continue investing in an unstable
+                  product, I led a strategic pivot: rebuilding the site from the
+                  ground up and rethinking the solution with clarity and focus.
+                </p>
+                <p>
+                  I delivered a new site using WIX, one which gave the
+                  organization digital independence, and implemented Checkfront,
+                  a robust, user-friendly third-party booking platform that
+                  aligned with the real operational needs. The system allowed
+                  for quick rollout of features including lesson registration,
+                  membership payments, and boat rentals without the ongoing
+                  costs and risks of custom development. It was intuitive for
+                  staff, reliable for users, and sustainable for the
+                  organization.
+                </p>
+                <p>
+                  The outcome was immediate and measurable: registrations became
+                  frictionless, administrative workload dropped significantly,
+                  and user satisfaction rose. The community responded with
+                  positive feedback, and the internal team regained confidence
+                  in managing digital tools. What began as a derailed project
+                  became a compelling example of adaptive leadership and
+                  strategic recovery.
+                </p>
+                <p>
+                  This experience reinforced several lasting lessons for me:
+                </p>
                 <ul>
-                    <li>Simplicity scales A lean, well-matched solution often outperforms custom builds when time, budget, and resources are limited.</li>
-                    <p><li>Do your reference checks. A vendor’s experience is critical. Don’t fund someone else’s learning curve with your hard earned budget.</li></p>
-                    <p><li>Choose aligned partners. Work with people who share your values, not just your contract. Partners should be invested in your success, and recommend what’s truly best for your organization.</li></p>
-                    <p><li>Build for sustainability. Tools should empower teams long-term, not lock them into external dependency.</li></p>
-                    <p><li>Adaptability is a superpower. When plans collapse, a well-informed pivot can turn failure into lasting success.</li></p>
-                    <li>See it in action at <a href="https://www.whistlersailing.com/" target="_blank">whistlersailing.com</a> </li>
+                  <li>
+                    Simplicity scales. A lean, well-matched solution often
+                    outperforms custom builds when time, budget, and resources
+                    are limited.
+                  </li>
+                  <li>
+                    Do your reference checks. A vendor’s experience is critical.
+                    Don’t fund someone else’s learning curve with your hard
+                    earned budget.
+                  </li>
+                  <li>
+                    Choose aligned partners. Work with people who share your
+                    values, not just your contract. Partners should be invested
+                    in your success, and recommend what’s truly best for your
+                    organization.
+                  </li>
+                  <li>
+                    Build for sustainability. Tools should empower teams
+                    long-term, not lock them into external dependency.
+                  </li>
+                  <li>
+                    Adaptability is a superpower. When plans collapse, a
+                    well-informed pivot can turn failure into lasting success.
+                  </li>
+                  <li>
+                    See it in action at
+                    <a href="https://www.whistlersailing.com/" target="_blank"
+                      >whistlersailing.com</a
+                    >
+                  </li>
                 </ul>
-         
-
-           
               </div>
-              <h3>Website Administration & Oversight</h3>
+              <h3>Website Administration & Management</h3>
               <p>
-                I oversee and maintain the Whistler Sailing website to ensure timely updates, accurate program information, and a seamless, user-friendly experience for the community.
+                I oversee and maintain the Whistler Sailing website to ensure
+                timely updates, accurate program information, and a seamless,
+                user-friendly experience for the community.
               </p>
             </div>
 
-            <!-- Portfolio item 2 -->
-
+            <!-- Portfolio item 2 - Corporate Plan & Annual Report-->
             <div
               class="portfolio-item"
               data-title="Corporate Plan & Annual Report"
-              data-image="./assets/2025_corporate_plan_mockup_web.jpg">
+              data-image="./assets/2025_corporate_plan_mockup_web.jpg"
+            >
               <img
                 src="./assets/2025_corporate_plan_mockup_web.jpg"
-                alt="Corporate Plan"/>
+                alt="Corporate Plan"
+              />
               <div class="portfolio-description-content hidden">
-                <p>Every year, the Resort Municipality of Whistler (RMOW) produces a comprehensive Corporate Plan and Annual Report to outline its strategic priorities, key performance indicators, and departmental achievements. Given its importance as both a public-facing and internal planning document, it needs to be clear, visually engaging, and reflective of the community’s identity.</p>
-                <p>I’ve been responsible for designing this report annually for several years. Each year, I collaborate with internal departments to gather content, understand evolving priorities, and ensure the design reflects both current municipal goals and the established RMOW brand.</p>
-                <p>For the <a href="https://www.whistler.ca/wp-content/uploads/2025-Corporate-Plan-2024-Annual-Report-_-June-18-2024-1.pdf" target="_blank">2025 edition</a>, I was inspired by the intersection of our increasingly digital world and Whistler’s deep connection to nature. To represent this balance, I integrated stylized generated wireframe animal illustrations throughout the report—symbols of local wildlife rendered in a modern, geometric form. These visuals bridged the organic and the digital, subtly reinforcing RMOW’s vision of progress rooted in environmental stewardship.</p>
-                <p>I apply consistent typographic hierarchy and visual structure to make the report easy to navigate, while also updating elements year over year to keep the design fresh. I also ensure the final product is accessible and optimized for digital publication, following best practices for accessible PDFs.</p>
-                <p>The finished Corporate Plan was delivered on schedule and well-received by Council and staff. It continues to serve as a key resource for both strategic reference and public communication, and my ongoing involvement each year has helped maintain a consistent, high-quality standard for this critical municipal document.</p>
-                <p>See it live at <a href="https://www.whistler.ca/mayor-council/strategies-and-plans/about-the-corporate-plan/" target="_blank">whistler.ca/corporateplan</a></p>
-
-
-
-
+                <p>
+                  Every year, the Resort Municipality of Whistler (RMOW)
+                  produces a comprehensive Corporate Plan and Annual Report to
+                  outline its strategic priorities, key performance indicators,
+                  and departmental achievements. Given its importance as both a
+                  public-facing and internal planning document, it needs to be
+                  clear, visually engaging, and reflective of the community’s
+                  identity.
+                </p>
+                <p>
+                  I’ve been responsible for designing this report annually for
+                  several years. Each year, I collaborate with internal
+                  departments to gather content, understand evolving priorities,
+                  and ensure the design reflects both current municipal goals
+                  and the established RMOW brand.
+                </p>
+                <p>
+                  For the
+                  <a
+                    href="https://www.whistler.ca/wp-content/uploads/2025-Corporate-Plan-2024-Annual-Report-_-June-18-2024-1.pdf"
+                    target="_blank"
+                    >2025 edition</a
+                  >, I was inspired by the intersection of our increasingly
+                  digital world and Whistler’s deep connection to nature. To
+                  represent this balance, I integrated stylized generated
+                  wireframe animal illustrations throughout the report—symbols
+                  of local wildlife rendered in a modern, geometric form. These
+                  visuals bridged the organic and the digital, subtly
+                  reinforcing RMOW’s vision of progress rooted in environmental
+                  stewardship.
+                </p>
+                <p>
+                  I apply consistent typographic hierarchy and visual structure
+                  to make the report easy to navigate, while also updating
+                  elements year over year to keep the design fresh. I also
+                  ensure the final product is accessible and optimized for
+                  digital publication, following best practices for accessible
+                  PDFs.
+                </p>
+                <p>
+                  The finished Corporate Plan was delivered on schedule and
+                  well-received by Council and staff. It continues to serve as a
+                  key resource for both strategic reference and public
+                  communication, and my ongoing involvement each year has helped
+                  maintain a consistent, high-quality standard for this critical
+                  municipal document.
+                </p>
+                <p>
+                  See it live at
+                  <a
+                    href="https://www.whistler.ca/mayor-council/strategies-and-plans/about-the-corporate-plan/"
+                    target="_blank"
+                    >whistler.ca/corporateplan</a
+                  >
+                </p>
               </div>
               <h3>Corporate Communications Design</h3>
               <p>
-               Designing impactful municipal reports that translate strategic direction into visually engaging documents—balancing data, narrative, and brand consistency to support clear and effective public communication.
+                Designing impactful municipal reports that translate strategic
+                direction into visually engaging documents—balancing data,
+                narrative, and brand consistency to support clear and effective
+                public communication.
               </p>
             </div>
 
-            <!-- Portfolio item 3 -->
-
+            <!-- Portfolio item 3 - Data Viz-->
             <div
               class="portfolio-item"
-              data-title="Strategic Plan & Council Priorities"
+              data-title="Data Visualization Design"
               data-image="./assets/data_viz_mockup_web.jpg"
-              data-description="As Lead Designer, I developed the layout and visuals for the Resort Municipality of Whistler's Strategic Plan - an essential document that outlines Council's priorities and the municipality's long-term approach. My design simplifies complex policy and planning information into an accessible, reader-friendly format, helping ensure community understanding and engagement with key goals and initiatives."
             >
               <img
                 src="./assets/data_viz_mockup_web.jpg"
-                alt="Strategic Plan"
+                alt="Data Visualization Design"
               />
+              <div class="portfolio-description-content hidden">
+                <p>
+                  As part of the Resort Municipality of Whistler’s Corporate
+                  Plan update, I was tasked with showing how key strategic
+                  initiatives had progressed over the previous year. The
+                  challenge was to present municipal data—typically buried in
+                  spreadsheets and reports—in a format the community could
+                  quickly understand and connect with.
+                </p>
+                <p>
+                  I was responsible for designing a visual snippet that would
+                  communicate this progress clearly and effectively. The goal
+                  was to turn raw statistics into a visual snapshot of municipal
+                  achievements.
+                </p>
+                <p>
+                  The final design snippet successfully distilled a year’s worth
+                  of progress into a one-glance visual, making it easier for the
+                  public, stakeholders, and Council to see the tangible impact
+                  of their initiatives. It was used in both internal
+                  presentations and public-facing materials, helping reinforce
+                  transparency and build trust through design.
+                </p>
+              </div>
               <h3>Data Visualization Design</h3>
               <p>
-                Translating Council's vision into a clear, accessible strategic
-                roadmap for the community.
+                Translating complex information into clear visual communication.
               </p>
             </div>
 
-            <!-- Portfolio item 4 -->
-
+            <!-- Portfolio item 4 - Photography-->
             <div
               class="portfolio-item"
-              data-title="Photography"
+              data-title="Through My Lens: Whistler Sailing"
               data-image="./assets/Photography_mockup_web.png"
-              data-description="As Whistler Sailing's official photographer, I document the vibrancy of our sailing events and everyday moments on the water. My photography highlights the emotion, action, and natural beauty of the sport, bringing the experience to life for both participants and the wider community. These images strengthen engagement across digital platforms and promotional materials, helping build a deeper connection with our audience."
             >
               <img
                 src="./assets/Photography_mockup_web.png"
                 alt="Photography"
               />
+              <div class="portfolio-description-content hidden">
+                <p>
+                  As Whistler Sailing’s official photographer, I’ve had the
+                  opportunity to capture the unique energy and spirit of life on
+                  the water. The team needed a consistent visual presence that
+                  could authentically reflect the excitement of the sport and
+                  deepen its connection with the community.
+                </p>
+                <p>
+                  Focusing on emotion, movement, and the natural beauty of our
+                  surroundings, I composed each shot to feel immersive and
+                  story-driven - bringing moments to life through thoughtful
+                  framing and timing.
+                </p>
+                <p>
+                  The resulting photography has been used across digital
+                  platforms, marketing campaigns, and community outreach
+                  materials - consistently driving higher engagement and
+                  audience connection. These images have helped Whistler Sailing
+                  present not just a program, but an experience, inviting people
+                  in and encouraging them to be part of the story.
+                </p>
+              </div>
               <h3>Visual Storytelling</h3>
               <p>
                 Capturing the energy of Whistler Sailing through compelling,
-                community-focused imagery.
+                people-focused imagery.
               </p>
             </div>
 
-            <!-- Portfolio item 5 -->
-
+            <!-- Portfolio item 5 - templates -->
             <div
               class="portfolio-item"
-              data-title="Template Creation"
+              data-title="Custom Presentation Templates"
               data-image="./assets/pptx_Template_Mockup.png"
-              data-description="I design and maintain the official PowerPoint template (.potx) for the Resort Municipality of Whistler—a vital communication tool used organization-wide. By refreshing the design seasonally, I keep the template visually engaging while maintaining strict brand alignment. Each version is built with flexibility in mind, balancing aesthetic appeal and practical usability to support a wide range of presentation needs across departments."
             >
               <img
                 src="./assets/pptx_Template_Mockup.png"
-                alt="Template creation"
+                alt="Custom Presentation Templates"
               />
-              <h3>Custom Templates</h3>
+              <div class="portfolio-description-content hidden">
+                <p>
+                  The Resort Municipality of Whistler needed a PowerPoint
+                  template that could serve multiple departments, meet varying
+                  presentation needs, and still reflect a unified, professional
+                  brand identity. The existing template was outdated, creating
+                  friction and reduced visual impact across the organization’s
+                  communications.
+                </p>
+                <p>
+                  I took on the responsibility of designing and maintaining
+                  RMOW’s official PowerPoint template (.potx). My creative
+                  process began with a deep dive into the municipality’s vision
+                  statement and current Council priorities to ensure the visuals
+                  aligned with core values and strategic direction. This
+                  foundation resulted in a design that feels both purposeful and
+                  inspiring. To keep the design fresh and engaging, I
+                  implemented seasonal updates, rotating visual themes while
+                  strictly maintaining brand consistency through typography,
+                  color, and layout structure.
+                </p>
+                <p>
+                  The updated templates have improved both the look and
+                  usability of internal and external presentations. They’ve made
+                  it easier for staff across departments to produce
+                  high-quality, on-brand materials with minimal effort,
+                  supporting clearer communication and a stronger municipal
+                  identity.
+                </p>
+              </div>
+              <h3>Custom Presentation Templates</h3>
               <p>
                 Designing adaptable PowerPoint templates that elevate
                 presentations while staying true to RMOW’s brand.
@@ -232,59 +456,146 @@
             </div>
 
             <!-- Portfolio item 6 -->
-
             <div
               class="portfolio-item"
-              data-title="Marketing Materials"
+              data-title="Navigating Marketing Design"
               data-image="./assets/Brochure_MockUp.png"
-              data-description="I design a variety of print materials—including posters, rack cards, and brochures—for public programs and events. Each piece is crafted with bold visuals, clear messaging, and strong layout hierarchy to capture attention and convey key information quickly. My goal is to ensure accessibility and engagement across diverse audiences, while maintaining brand consistency and visual appeal."
             >
               <img
                 src="./assets/Brochure_MockUp.png"
                 alt="Marketing Materials"
               />
-              <h3>Marketing Materials</h3>
+              <div class="portfolio-description-content hidden">
+                <p>
+                  Every few years, Whistler Sailing undertakes a refresh of its
+                  print materials to align with new programs, evolving branding,
+                  and shifting audience needs. As part of this ongoing
+                  collaboration, I lead the design of promotional assets that
+                  support outreach to both locals and visitors—from first-time
+                  sailors to seasoned racers. The challenge is to create pieces
+                  that stand out in busy display environments, communicate
+                  information quickly, and stay true to the organization’s
+                  identity.
+                </p>
+                <p>
+                  I design a variety of marketing collateral, including posters,
+                  brochures, and rack cards, each piece tailored to its message
+                  and audience. My process emphasizes high-impact visuals,
+                  strong typographic hierarchy, and clean, accessible layouts
+                  that guide the viewer through key content with ease.
+                </p>
+                <p>
+                  These materials have been distributed across the Sea to Sky
+                  corridor in visitor centres, storefronts, and community
+                  hubs—boosting visibility and turnout for programs and events.
+                  Each design maintains brand consistency while allowing room
+                  for seasonal updates and evolving offerings.
+                </p>
+              </div>
+              <h3>Marketing Design</h3>
               <p>
                 Creating impactful print designs that inform, attract, and
-                resonate with a wide audience.
+                resonate.
               </p>
             </div>
 
             <!-- Portfolio item 7 -->
-
-          <div class="portfolio-item"
-            data-title="Promo Video Short"
-            data-image="./assets/reel_mockup_web.jpg">
-
-        <img src="./assets/reel_mockup_web.jpg" alt="Short Video Promo" />
-
-        <div class="portfolio-description-content hidden">
-            <p>This is a promotional YouTube Short created for our launch campaign.</p>
-
-        <div class="video-wrapper">
-        <iframe 
-            src="https://www.youtube.com/embed/l4KcI2cCF_4" 
-            title="YouTube Short" 
-            frameborder="0" 
-            allowfullscreen>
-        </iframe>
-        </div>
-  </div>
-
-  <h3>Shorts Creation</h3>
-  <p>Click to watch the Short and learn more.</p>
-</div>
-
-
-
-
-
+            <div
+              class="portfolio-item"
+              data-title="Reel Creation: Wing Foiling Launch"
+              data-image="./assets/reel_mockup_web.jpg"
+            >
+              <img src="./assets/reel_mockup_web.jpg" alt="Short Video Promo" />
+              <div class="portfolio-description-content hidden">
+                <p>
+                  Whistler Sailing was launching a brand-new program: wing
+                  foiling. As an emerging sport with huge visual appeal but low
+                  local awareness, the goal was to quickly introduce it to the
+                  Sea to Sky audience and generate buzz. We needed a piece of
+                  content that could grab attention, communicate the thrill of
+                  the sport, and drive clicks.
+                </p>
+                <p>
+                  I took the lead on editing and producing a high-energy reel
+                  tailored for mobile-first platforms. Drawing from on-water
+                  footage, I crafted a 60-second short that emphasized action,
+                  flow, and the stunning backdrop of Whistler’s landscape. Every
+                  choice—from pacing and transitions to soundtrack—was made to
+                  reflect the excitement of wing foiling while staying visually
+                  on-brand. I specifically selected clips that made the sport
+                  look inviting and achievable, steering away from anything that
+                  might feel intimidating to newcomers.
+                </p>
+                <p>
+                  The video was launched with targeted social media ads across
+                  Instagram, Facebook, and YouTube. It quickly gained traction,
+                  generating early interest and giving Whistler Sailing a
+                  reusable visual asset to promote the program throughout the
+                  season—built to spark curiosity, clicks, and conversions.
+                </p>
+                <p>
+                  I even got to jump in front of the lens for this one—you’ll
+                  spot me in the pink vest!
+                </p>
+                <div class="video-wrapper">
+                  <iframe
+                    src="https://www.youtube.com/embed/l4KcI2cCF_4"
+                    title="YouTube Short"
+                    frameborder="0"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+              <h3>Video Editing</h3>
+              <p>Creating dynamic short-form content that drives engagement.</p>
+            </div>
 
             <!-- <INSERT MORE PROJECTS HERE> -->
           </div>
         </div>
       </section>
+    </main>
+    <!-- FOOTER SECTION -->
 
-</main>
-</body>
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <ul>
+            <li>
+              <a href="mailto:jillwynott@gmail.com">jillwynott@gmail.com</a>
+            </li>
+            <li><a href="tel:+16049383829">604-938-3829</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./portfolio.html">Portfolio</a></li>
+            <li><a href="./about.html">About</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-social">
+          <h4>Connect</h4>
+          <ul>
+            <li>
+              <a href="https://www.linkedin.com/in/jillwynott/" target="_blank"
+                >LinkedIn</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/jyknot" target="_blank">GitHub</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© Jill Wynott 2025</p>
+      </div>
+    </footer>
+  </body>
 </html>

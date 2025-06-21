@@ -98,16 +98,16 @@
 }
 
 @media (max-width: 600px) {
+  body {
+    font-size: 1.15rem;
+  }
   .intro-text h1 {
-    font-size: 1.8rem;
+    font-size: 2.1rem;
   }
-
-  .intro-text p {
-    font-size: 1rem;
-  }
-
-  .intro-image img {
-    max-width: 260px;
+  .intro-text p,
+  .portfolio-container p,
+  .story-container p {
+    font-size: 1.18rem;
   }
 }
 
@@ -252,7 +252,7 @@
   text-decoration: none;
   color: inherit;
   font-weight: bold;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #main-header-nav a::after {
@@ -268,8 +268,8 @@
   transition: transform 0.3s ease;
 }
 
-#main-header-nav a:hover::after {
-  transform: scaleX(1.2);
+#main-header-nav a:hover {
+  transform: scale(1.08);
 }
 
 
@@ -525,7 +525,7 @@
     #main-header-nav {
       width: 100%;
       background-color: transparent;
-      padding: 1rem;
+      padding: 1.2rem 0;
     }
     
     #main-header-nav ul {
@@ -539,6 +539,8 @@
       text-decoration: none;
       color: inherit;
       font-weight: bold;
+      font-size: 1.3rem;
+      transition: color 0.3s ease, transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
   
     nav ul {
@@ -853,8 +855,8 @@ body.theme-dev .theme-toggle.dev i {
   }
   
   .theme-dark {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #121111;
+    color: #ffffffdd;
   }
   
   .theme-colorful {
@@ -1155,7 +1157,7 @@ body.theme-dev .theme-toggle.dev i {
   background: linear-gradient(145deg, #2b3444, #3c4a60);
   color: #ffffff;
   border: 1px solid #444;
-  box-shadow: 0 0 20px rgba(0, 146, 144, 0.4);
+  box-shadow: 0 0 10px rgba(0, 146, 144, 0.4);
 }
 
 .theme-colorful .popup-close {
@@ -1651,12 +1653,15 @@ body.theme-dev .theme-toggle.dev i {
   /* Footer styles */
 
   footer {
-    background-color: #f2f2f2;
     color: #333;
     padding: 2rem 1rem;
     text-align: center;
     font-size: 0.95rem;
     border-top: 1px solid #ddd;
+  }
+
+  footer a {
+    color: darkgrey
   }
   
   /* Responsive dark mode */
@@ -1674,6 +1679,26 @@ body.theme-dev .theme-toggle.dev i {
     color: #ffffff;
     border-top: 1px solid #444;
   }
+
+    .theme-colorful footer a{
+      color: #009290;
+    }
+
+    .theme-colorful footer a:hover {
+      transform: scale(1.2);
+    }
+
+     /* Dark mode */
+
+  .theme-dark footer a {
+    color: darkgray;
+  }
+
+    .theme-dark footer a:hover {
+    color: darkgray;
+    transform: scale(1.2);
+  }
+
   
   /* Dev mode */
 
@@ -1791,6 +1816,86 @@ body.theme-dev .theme-toggle.dev i {
   width: 100%;
   height: 100%;
   border: none;
+}
+
+
+/* FOOTER STYLES */
+
+.site-footer {
+  padding: 2rem 1rem;
+  font-size: 0.95rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.site-footer h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.site-footer a {
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-nav ul,
+.footer-contact ul, 
+.footer-social ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-contact li, 
+.footer-social li {
+  margin-bottom: 0.4rem;
+}
+
+
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid;
+  padding-top: 1rem;
+  font-size: 0.85rem;
+}
+
+/* THEME: Dev Mode (Terminal style) */
+.theme-dev .site-footer {
+  background: #111;
+  color: #00ff90;; /* green glow */
+}
+
+.theme-dev .site-footer a {
+  color: #00ff90;;
+}
+
+.theme-dev .footer-bottom {
+  border-color: #333;
+  color: #00ff90;;
+}
+
+/* THEME: Design Mode (Clean and visual) */
+.theme-design .site-footer {
+  background: #f8f8f8;
+  color: #333;
+}
+
+.theme-design .site-footer a {
+  color: #0077cc;
+}
+
+.theme-design .footer-bottom {
+  border-color: #ddd;
+  color: #555;
 }
 
 

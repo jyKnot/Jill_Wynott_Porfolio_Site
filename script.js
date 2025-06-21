@@ -1,3 +1,11 @@
+(function applyInitialTheme() {
+  const savedTheme = localStorage.getItem('selectedTheme');
+  if (savedTheme) {
+    document.body.classList.add(savedTheme);
+  }
+})();
+
+
 // GLOBALS
 
 let bootTimeout; // global scope
@@ -150,9 +158,8 @@ document.addEventListener('DOMContentLoaded', () => {  // ensures the script run
             if (bootLines) bootLines.textContent = ''; // clear boot messages
 }
 
-  
-        document.body.classList.remove('theme-light', 'theme-dark', 'theme-colorful', 'theme-dev'); //ensures only one theme is active at a time
-        document.body.classList.add(themeClass); // theme class is pulled from the clicked button
+        setTheme(themeClass);
+
   
         if (themeClass === 'theme-light') { // if the selected theme is theme-light, update the intro image to headshot-image-light 
           introImage.src = './assets/headshot-image-light.png';
@@ -345,21 +352,18 @@ if (popup && popupImage && popupTitle && popupDescription && popupClose) {
 
 
 
-
-
-
-  // FORM SUBMISSION
-  
-const form = document.querySelector('.contact-form');
-const systemBubble = document.querySelector('.chat-bubble.system');
-
-if (form) {
-  form.addEventListener('submit', function (e) {
-    systemBubble.textContent = "✅ Thanks for your message! I'll be in touch soon.";
-    setTimeout(() => {
-      form.reset();
-    }, 1000);
-  });
+// Persist theme selection across pages
+function setTheme(theme) {
+  document.body.classList.remove('theme-light', 'theme-dark', 'theme-colorful', 'theme-dev');
+  document.body.classList.add(theme);
+  localStorage.setItem('selectedTheme', theme);
 }
+
+
+function getSavedTheme() {
+  return localStorage.getItem('selectedTheme') || 'theme-light';
+};
+
+
 
 
