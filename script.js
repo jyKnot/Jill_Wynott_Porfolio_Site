@@ -328,10 +328,6 @@ if (popup && popupImage && popupTitle && popupDescription && popupClose) {
 } else {
   console.warn('Popup elements not found — popup functionality disabled.');
 }
-
-
-
-
   
     popupClose.addEventListener('click', () => { // sets event listener to the popups close button
       popup.classList.remove('visible'); // hides the popup by removing any styling
@@ -353,37 +349,11 @@ if (popup && popupImage && popupTitle && popupDescription && popupClose) {
 
 
 // Persist theme selection across pages
-function setTheme(theme) {
-  // Remove all theme classes from both <body> and <html>
-  document.body.classList.remove('theme-light', 'theme-dark', 'theme-colorful', 'theme-dev');
-  document.documentElement.classList.remove('theme-light', 'theme-dark', 'theme-colorful', 'theme-dev');
-  document.body.classList.add(theme);
-  document.documentElement.classList.add(theme);
-  localStorage.setItem('selectedTheme', theme);
 
-  // If leaving dev mode, clean up dev artifacts
-  if (theme !== 'theme-dev') {
-    // Remove data-tag attributes
-    document.querySelectorAll('[data-tag]').forEach(el => el.removeAttribute('data-tag'));
-    // Remove dev-editable-content class
-    document.querySelectorAll('.dev-editable-content').forEach(el => el.classList.remove('dev-editable-content'));
-    // Remove any lingering terminal wrappers (if any)
-    document.querySelectorAll('.inline-terminal').forEach(wrapper => {
-      if (wrapper.parentNode) {
-        // Replace with the inner content (try to restore original, or just unwrap)
-        const content = wrapper.querySelector('.dev-editable-content');
-        if (content) {
-          wrapper.replaceWith(content);
-        } else {
-          // fallback: unwrap all children
-          while (wrapper.firstChild) {
-            wrapper.parentNode.insertBefore(wrapper.firstChild, wrapper);
-          }
-          wrapper.remove();
-        }
-      }
-    });
-  }
+function setTheme(theme) {
+  document.body.classList.remove('theme-light', 'theme-dark', 'theme-colorful', 'theme-dev');
+  document.body.classList.add(theme);
+  localStorage.setItem('selectedTheme', theme);
 }
 
 

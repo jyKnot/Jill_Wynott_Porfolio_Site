@@ -59,17 +59,15 @@
 
     <script src="script.js" defer></script>
 
-
     <!-- This removes the white flash - so browser can style the page before it begins rendering -->
     <script>
       (function () {
-        const theme = localStorage.getItem('selectedTheme');
+        const theme = localStorage.getItem("selectedTheme");
         if (theme) {
-        document.documentElement.className = theme;
-     }
-  })();
-</script>
-
+          document.documentElement.className = theme;
+        }
+      })();
+    </script>
   </head>
 
   <body>
@@ -78,7 +76,6 @@
     <div id="boot-terminal" class="terminal-boot hidden">
       <pre id="boot-lines"></pre>
     </div>
-
 
     <!-- THEME NAVIGATION -->
 
@@ -185,80 +182,77 @@
         </div>
       </section>
 
-      <section id="story-section">
-        <div class="story-container slide-in-right">
-          <p>
-            I believe great design isn’t just about how something looks - it’s about what it does. </p>
-          <p>It’s how it communicates. How it guides. How it connects. How it helps people understand, or take action.</p>
-           <p> Design should not just be seen - it should be <em>felt.</em>
-          </p>
-        </div>
-      </section>
-
-        <!-- PORTFOLIO SHOWCASE SECTION -->
+      <!-- PORTFOLIO SHOWCASE SECTION -->
 
       <section id="portfolio-showcase">
-  <div class="portfolio-showcase-container">
-    <h1>Explore my Work</h1>
-    <br /><br />
-    <div class="portfolio-showcase-grid">
-
-      <!-- Portfolio Showcase Item -->
-      <a href="./portfolio.html" class="portfolio-showcase-item" 
-         data-title="Showcase of my work"
-         data-image="./assets/showcase_web_reel.jpg"
-         data-description="This showcases some of my work items">
-        <img
-          src="./assets/showcase_web_reel2.jpg"
-          alt="Whistler Sailing Web Management"
-        />
-        <!-- Optional caption inside the link -->
-        <!-- <div class="caption">
+        <div class="portfolio-showcase-container">
+          <h1>Explore my Work</h1>
+          <br /><br />
+          <div class="portfolio-showcase-grid">
+            <!-- Portfolio Showcase Item -->
+            <a
+              href="./portfolio.html"
+              class="portfolio-showcase-item"
+              data-title="Showcase of my work"
+              data-image="./assets/showcase_web_reel.jpg"
+              data-description="This showcases some of my work items"
+            >
+              <img
+                src="./assets/showcase_web_reel2.jpg"
+                alt="Whistler Sailing Web Management"
+              />
+              <!-- Optional caption inside the link -->
+              <!-- <div class="caption">
           <h3>Showcase of My Work</h3>
           <p>See projects across video, print, and data design.</p>
         </div> -->
-      </a>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
 
-    </div>
-  </div>
-</section>
-
-
-    
     <!-- FOOTER SECTION -->
 
- <footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-contact">
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="mailto:jillwynott@gmail.com">jillwynott@gmail.com</a></li>
-        <li><a href="tel:+16049383829">604-938-3829</a></li>
-      </ul>
-    </div>
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <ul>
+            <li>
+              <a href="mailto:jillwynott@gmail.com">jillwynott@gmail.com</a>
+            </li>
+            <li><a href="tel:+16049383829">604-938-3829</a></li>
+          </ul>
+        </div>
 
-    <div class="footer-nav">
-      <h4>Navigation</h4>
-      <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./portfolio.html">Portfolio</a></li>
-        <li><a href="./about.html">About</a></li>
-      </ul>
-    </div>
+        <div class="footer-nav">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./portfolio.html">Portfolio</a></li>
+            <li><a href="./about.html">About</a></li>
+          </ul>
+        </div>
 
-    <div class="footer-social">
-      <h4>Connect</h4>
-      <ul>
-        <li><a href="https://www.linkedin.com/in/jillwynott/" target="_blank">LinkedIn</a></li>
-        <li><a href="https://github.com/jyknot" target="_blank">GitHub</a></li>
-      </ul>
-    </div>
-  </div>
+        <div class="footer-social">
+          <h4>Connect</h4>
+          <ul>
+            <li>
+              <a href="https://www.linkedin.com/in/jillwynott/" target="_blank"
+                >LinkedIn</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/jyknot" target="_blank">GitHub</a>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-  <div class="footer-bottom">
-    <p>© Jill Wynott 2025</p>
-  </div>
-</footer>
-
-</body>
+      <div class="footer-bottom">
+        <p>© Jill Wynott 2025</p>
+      </div>
+    </footer>
+  </body>
 </html>
