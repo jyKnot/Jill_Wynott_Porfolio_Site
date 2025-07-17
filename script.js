@@ -1,3 +1,4 @@
+// Checks local storage for selected theme - used this to try to bebug theme swapping between pages.
 (function applyInitialTheme() {
   const savedTheme = localStorage.getItem('selectedTheme');
   if (savedTheme) {
@@ -45,7 +46,7 @@ function switchTheme(theme) {
   
     // THEMES 
 
-document.addEventListener('DOMContentLoaded', () => {  // ensures the script runs after HTML is loaded
+  document.addEventListener('DOMContentLoaded', () => {  // ensures the script runs after HTML is loaded
     const themeButtons = document.querySelectorAll('.theme-toggle'); // selects all elements on the page with the .theme-toggle class
     const introImage = document.querySelector('#intro-section .intro-image img'); // selects my headshot in the intro section
   
@@ -90,8 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {  // ensures the script run
         wrapper.className = 'terminal-box inline-terminal'; // terminal-box - makes the div look like a terminal. inline-terminal - styling that keep ths terminal block inline
         // - take this box, and put these two labels into it
         
-        
-        
+        // inline terminal box editing in dev mode
+
         const cloned = el.cloneNode(true);
         cloned.setAttribute('contenteditable', 'true');
         cloned.classList.add('dev-editable-content');
@@ -106,13 +107,9 @@ document.addEventListener('DOMContentLoaded', () => {  // ensures the script run
           if (cursor) cursor.style.display = 'none';
         });
 
-
         const cursor = document.createElement('div');
         cursor.className = 'blinking-cursor-overlay';
         wrapper.appendChild(cursor);
-
-
-
 
 
         // this block creates the terminal look, adding the terminal header, red, yellow and green dots and the path 

@@ -28,5 +28,8 @@ No installation is required. Simply download the project files and open `index.h
 ## A Note on Scrollytelling
 This project experiments with a lightweight version of scrollytelling—a narrative format triggered by scroll behavior—to guide the user through the portfolio in a more engaging way.
 
+## Known Issue
+There is a bug where the selected theme does not stay active when switching between pages. The site retains aspects of a different theme. 
+
 ## License
 This project is open-source. You are free to view, share, and adapt the code with attribution.

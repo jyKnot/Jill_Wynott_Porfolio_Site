@@ -481,7 +481,6 @@ body {
 
 /* THEMES */
 
-
 /* Light Theme */
 
 .theme-light #main-header-nav a:hover {
@@ -503,80 +502,80 @@ body {
   color: #00ff90;
 }
   
-    /* MAIN HEADER NAV (Top Horizontal) */
+/* MAIN HEADER NAV (Top Horizontal) */
   
-    #main-header-nav {
-      width: 100%;
-      background-color: transparent;
-      padding: 1.2rem 0;
-    }
+#main-header-nav {
+  width: 100%;
+  background-color: transparent;
+  padding: 1.2rem 0;
+}
     
-    #main-header-nav ul {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      list-style: none;
-    }
+#main-header-nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  list-style: none;
+}
     
-    #main-header-nav a {
-      text-decoration: none;
-      color: inherit;
-      font-weight: bold;
-      font-size: 1.3rem;
-      transition: color 0.3s ease, transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    }
+#main-header-nav a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+  font-size: 1.3rem;
+  transition: color 0.3s ease, transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
   
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      padding: 1%;
-  }
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+}
   
-    nav ul li a {
-      color: whitesmoke;
-      text-decoration: none;
-      padding: 20px;
-  }
+nav ul li a {
+  color: whitesmoke;
+  text-decoration: none;
+  padding: 20px;
+}
   
-    nav ul li a:hover {
-      color: grey;
-  }
+nav ul li a:hover {
+  color: grey;
+}
   
-  .intro-image img {
-      width: 100%;
-      height: auto;
-      max-width: 100%;
-      display: block;
-      border-radius: 12px;
-      object-fit: cover; /* optional: helps with consistent crop */
-      transition: opacity 0.5s ease;
-    }
+.intro-image img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  border-radius: 12px;
+  object-fit: cover; /* optional: helps with consistent crop */
+  transition: opacity 0.5s ease;
+}
   
   
-  /*  THEME STYLING */
+/*  THEME STYLING */
 
-  /* theme toggle nav (fixed on the right side) */
+/* theme toggle nav (fixed on the right side) */
   
-    #theme-nav {
-      position: fixed;
-      top: 50%;
-      right: 10px;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 1000;
-    }
+#theme-nav {
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
 
-    #theme-nav button {
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0.5rem;
-      font-size: 1.4rem;
-      color: inherit;
-      transition: transform 0.2s ease;
+#theme-nav button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 1.4rem;
+  color: inherit;
+  transition: transform 0.2s ease;
 }
 
 #theme-nav button:hover {
@@ -584,6 +583,7 @@ body {
 }
 
 /* Theme icon highlight: active state */
+
 body.theme-light .theme-toggle.light i,
 body.theme-dark .theme-toggle.dark i,
 body.theme-colorful .theme-toggle.colour i,
@@ -591,7 +591,8 @@ body.theme-dev .theme-toggle.dev i {
   color: #009290; /* Light green or pick per-theme color */
 }
 
-/* Optional: default icon color */
+/* default icon color */
+
 #theme-nav i {
   color: inherit;
   opacity: 0.6;
@@ -599,19 +600,18 @@ body.theme-dev .theme-toggle.dev i {
 }
 
 /* Hover effect */
+
 #theme-nav button:hover i {
   opacity: 1;
 }
 
 /* Dev theme override */
+
 .theme-dev #theme-nav i {
   color: #00ff90;
 }
 
-
-    
-
-  /* Dev Theme Styling */
+/* Dev Theme Styling */
 
 .theme-dev {
     background-color: #1e1e1e;
@@ -660,7 +660,6 @@ body.theme-dev .theme-toggle.dev i {
     background-color: #005f99;
   }
   
-
   .theme-dev p {
     background-color: #1e1e1e;
     color: #dcdcdc;
@@ -721,9 +720,6 @@ body.theme-dev .theme-toggle.dev i {
     margin-left: 0.5rem;
   }
 
-  
-
-  
   /* SCROLLYTELLING */
 
   /* Reveal on scroll sytles */
@@ -742,7 +738,7 @@ body.theme-dev .theme-toggle.dev i {
 
   /* Default hidden state */
 
-    /* Slide in from left */
+  /* Slide in from left */
 
   .slide-in-left {
       opacity: 0;
@@ -765,11 +761,11 @@ body.theme-dev .theme-toggle.dev i {
     transform: translateX(0);
   }
 
-    /* When revealed */
+  /* When revealed */
 
-    .slide-in-left.revealed {
-      opacity: 1;
-      transform: translateX(0);
+  .slide-in-left.revealed {
+    opacity: 1;
+    transform: translateX(0);
     }
   
     /* Slide in from right */
@@ -856,7 +852,7 @@ body.theme-dev .theme-toggle.dev i {
   }
   
   .theme-colorful .portfolio-item {
-    box-shadow: 0 1px 6px #009290; /* Teal tone for colorful theme */
+    box-shadow: 0 1px 6px #009290;
   }
 
   .theme-colorful #main-header-nav a {
@@ -872,10 +868,7 @@ body.theme-dev .theme-toggle.dev i {
   color: #ffffff; 
 }
 
-
-
-    /* INTRO SECTION */
-
+/* INTRO SECTION */
 
 #intro-section {
     padding: 2rem;
@@ -905,7 +898,6 @@ body.theme-dev .theme-toggle.dev i {
     font-size: 2rem;
   }
 
-     
   /* Intro Image Styling */
 
   .intro-image img {
@@ -913,8 +905,7 @@ body.theme-dev .theme-toggle.dev i {
     height: auto;
   }
  
-  
-    /* STORY SECTION */
+  /* STORY SECTION */
 
   #story-section {
     padding: 2rem;
@@ -924,7 +915,6 @@ body.theme-dev .theme-toggle.dev i {
     margin: 0 auto;
 }
 
-  
   .story-container {
     padding: 10rem;
     border-radius: 12px;
@@ -950,23 +940,23 @@ body.theme-dev .theme-toggle.dev i {
 
   #portfolio-showcase-section {
     padding: 4rem 2rem;
-    padding-top: 10rem; /* reminder to keep same spacing throughout page */
+    padding-top: 10rem; /* keep same spacing throughout page!! */
     padding-bottom: 20rem;
     max-width: 1100px;
     margin: 0 auto;
     justify-content: center;
   }
 
-    .portfolio-showcase-container {
+  .portfolio-showcase-container {
     text-align: center;
     justify-content: center;
     padding-bottom: 15rem;
   }
 
   
-  /* PORTFOLIO SECTION */
+/* PORTFOLIO SECTION */
 
-#portfolio-section {
+  #portfolio-section {
     padding: 4rem 2rem;
     padding-top: 10rem; /* reminder to keep same spacing throughout page */
     padding-bottom: 20rem;
@@ -1011,7 +1001,7 @@ body.theme-dev .theme-toggle.dev i {
   .portfolio-item {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Optional for full height alignment */
+    justify-content: space-between; 
     padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
@@ -1040,7 +1030,7 @@ body.theme-dev .theme-toggle.dev i {
   object-fit: cover;
   border-radius: 16px;
   display: block;
-  margin: 0 auto 2rem auto; /* this centers it horizontally */
+  margin: 0 auto 2rem auto; /* centers it horizontally */
 }
   
   .portfolio-item h3 {
@@ -1067,7 +1057,7 @@ body.theme-dev .theme-toggle.dev i {
     margin-top: 1rem;
   }
   
-/* PORTFOLIO POPUP(Expanded View) */
+/* PORTFOLIO POPUP(expanded view) */
 
 #popupDescription p {
   margin-bottom: 1.25rem;
@@ -1116,7 +1106,7 @@ body.theme-dev .theme-toggle.dev i {
   text-align: left;
   animation: fadeIn 0.3s ease;
 
-  /*  enable scrolling inside popup when on screens that the content does not fit into */
+/*  enable scrolling inside popup when on screens that the content does not fit into */
 
   max-height: 80vh;
   overflow-y: auto;
@@ -1170,7 +1160,7 @@ body.theme-dev .theme-toggle.dev i {
 }
 
   
-  /* Responsive Image in portfolio popup*/
+  /* Responsive image in portfolio popup*/
 
   .popup-content img {
     width: 100%;
@@ -1287,11 +1277,9 @@ body.theme-dev .theme-toggle.dev i {
   vertical-align: middle;
 }
 
+/* Terminal content area */
 
-  
-  /* Terminal content area */
-
-  .terminal-boot {
+.terminal-boot {
   background-color: #1e1e1e;
   color: #00ff90;
   font-family: 'Courier New', monospace;
@@ -1322,34 +1310,34 @@ body.theme-dev .theme-toggle.dev i {
 }
 
 
-  .terminal-content {
-    padding: 1rem;
-    color: #d4d4d4;
-    background-color: #1e1e1e;
-    overflow-x: auto;
-  }
+.terminal-content {
+  padding: 1rem;
+  color: #d4d4d4;
+  background-color: #1e1e1e;
+  overflow-x: auto;
+}
   
-  .terminal-content pre {
-    margin: 0;
-    white-space: pre-wrap;
-    line-height: 1.6;
-  }
+.terminal-content pre {
+  margin: 0;
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
   
-  .terminal-content .prompt {
-    color: #00ff90;
-    font-weight: bold;
-  }
+.terminal-content .prompt {
+  color: #00ff90;
+  font-weight: bold;
+}
   
-  .terminal-content .output {
-    color: #9cdcfe;
-  }
+.terminal-content .output {
+  color: #9cdcfe;
+}
   
   
 
 
-  /* Terminal styles*/
+/* Terminal styles*/
 
-  .inline-terminal {
+.inline-terminal {
   margin: 1rem 0;
   background-color: #1e1e1e;
   border: 1px solid #333;
@@ -1381,8 +1369,6 @@ body.theme-dev .theme-toggle.dev i {
   outline: none;
 }
 
-
-  
 
 /* Dino game (dev mode) */
 
@@ -1424,70 +1410,70 @@ body.theme-dev .theme-toggle.dev i {
 }
 
 
-  /* Footer styles */
+/* Footer styles */
 
-  footer {
-    color: #333;
-    padding: 2rem 1rem;
-    text-align: center;
-    font-size: 0.95rem;
-    border-top: 1px solid #ddd;
-  }
+footer {
+  color: #333;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  border-top: 1px solid #ddd;
+}
 
-  footer a {
-    color: darkgrey
-  }
+footer a {
+  color: darkgrey
+}
   
-  /* Dark mode */
+/* Dark mode */
 
-  .theme-dark footer {
-    background-color: #111;
-    color: #f1f1f1;
-    border-top: 1px solid #333;
-  }
+.theme-dark footer {
+  background-color: #111;
+  color: #f1f1f1;
+  border-top: 1px solid #333;
+}
   
-  /* Colorful mode */
+/* Colorful mode */
 
-  .theme-colorful footer {
-    background-color: #2a2f3a;
-    color: #ffffff;
-    border-top: 1px solid #444;
-  }
+.theme-colorful footer {
+  background-color: #2a2f3a;
+  color: #ffffff;
+  border-top: 1px solid #444;
+}
 
-  .theme-colorful footer a{
-    color: #009290;
-  }
+.theme-colorful footer a{
+  color: #009290;
+}
 
-  .theme-colorful footer a:hover {
-    transform: scale(1.2);
-  }
+.theme-colorful footer a:hover {
+  transform: scale(1.2);
+}
 
-     /* Dark mode */
+/* Dark mode */
 
-  .theme-dark footer a {
-    color: darkgray;
-  }
+.theme-dark footer a {
+  color: darkgray;
+}
 
-    .theme-dark footer a:hover {
-    color: darkgray;
-    transform: scale(1.2);
-  }
+.theme-dark footer a:hover {
+  color: darkgray;
+  transform: scale(1.2);
+}
 
   
-  /* Dev mode */
+/* Dev mode */
 
-  .theme-dev footer {
-    background-color: #1e1e1e;
-    color: #00ff90;
-    font-family: 'Courier New', monospace;
-    border-top: 1px solid #00ff90;
-    text-align: center;
-  }
+.theme-dev footer {
+  background-color: #1e1e1e;
+  color: #00ff90;
+  font-family: 'Courier New', monospace;
+  border-top: 1px solid #00ff90;
+  text-align: center;
+}
 
 
-  /* SOCIALS */
+/* SOCIALS */
 
-  /* Fixed social links (top left corner) */
+/* Fixed social links (top left corner) */
 
 .social-fixed {
     position: fixed;
@@ -1499,32 +1485,32 @@ body.theme-dev .theme-toggle.dev i {
     z-index: 1001;
   }
   
-  .social-fixed a {
+.social-fixed a {
     color: inherit;
     font-size: 1.4rem;
     transition: color 0.3s ease, transform 0.3s ease;
   }
   
-  .social-fixed a:hover {
+.social-fixed a:hover {
     color: darkgray;
     transform: scale(1.2);
   }
   
-  /* Social theme specific overrides */
+/* Social theme specific overrides */
 
-  .theme-dark .social-fixed a:hover {
+.theme-dark .social-fixed a:hover {
     color: darkgray;
   }
   
-  .theme-colorful .social-fixed a:hover {
+.theme-colorful .social-fixed a:hover {
     color: #009290;
   }
   
-  .theme-dev .social-fixed a:hover {
+.theme-dev .social-fixed a:hover {
     color: #00ff90;
   }
 
-  .hidden {
+.hidden {
     display: none !important; 
   }
 
@@ -1641,7 +1627,7 @@ body.theme-dev .theme-toggle.dev i {
   font-size: 0.85rem;
 }
 
-/* THEME: Dev Mode (Terminal style) */
+/* THEME: Dev Mode (terminal) */
 
 .theme-dev .site-footer {
   background: #111;
